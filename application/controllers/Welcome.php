@@ -23,11 +23,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function forbiden($value='')
+	public function register($value='')
 	{
-		$data['page_name'] = "Page Forbidden";		
-		$data['content']   = 'forbiden';
+		$data['page_name'] = "Register";		
+		$data['content']   = 'front/register';
 		$this->load->view('front/layout/template',$data);
 	}
 
+	public function login($value='')
+	{
+		$data['page_name'] = "Register";		
+		$data['content']   = 'front/login';
+		$this->load->view('front/layout/template',$data);
+	}
 }
