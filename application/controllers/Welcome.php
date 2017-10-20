@@ -22,4 +22,12 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function forbiden($value='')
+	{
+		$data['page_name'] = "Page Forbidden";		
+		$data['content']   = 'forbiden';
+		$this->load->view('front/layout/template',$data);
+	}
+
 }
