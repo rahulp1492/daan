@@ -37,7 +37,7 @@
 
             <li><input type="submit" class="btn blue" style="width:100%" value="Subscribe Now" /></li>
 
-
+            <li><span class="" id="err_newsletter_email"></span></li>
           </ul>
         </form>
         </div>
@@ -74,10 +74,10 @@ $(document).ready(function(){
     e.preventDefault()
      $.post("<?php echo base_url();?>index.php/index/newsletter",{user_email:$("#sub_email").val()},function(data, status){
         console.log($("#subscribe").serialize()+"sdfs");
-        alert("Data: " + data + "\nStatus: " + status);
+        $("#err_newsletter_email").html(data);
     });
   });
-});
+},"html");
 </script>
 </body>
 </html>

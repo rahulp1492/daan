@@ -35,7 +35,7 @@ class Index extends CI_Controller {
 
 				if($this->form_validation->run()){
 
-				$data['user_email'] 		= $this->input->post('user_email');
+				$data['email'] 		= $this->input->post('user_email');
 				$getRecordCount = $this->master_model->getRecordCount("news_letter", $data);
 
 				if($getRecordCount!=1&&$getRecordCount<2){
@@ -50,6 +50,6 @@ class Index extends CI_Controller {
 				}else{
 					$response = "<span style='color:red !important;'>".form_error('user_email')."</span>";
 				}
-				echo json_encode($response);
+				echo $response;
 			}
 }	
