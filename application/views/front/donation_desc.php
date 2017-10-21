@@ -69,13 +69,13 @@
                             <?php foreach ($req_list as $key => $value):?>
 							  <li class="collection-item avatar"> 
 
-                              <a href="profile.php?uid=9"><img src="img/profile.png" alt="hg" class="circle">
+                              <a href="#"><img src="<?=base_url().$value['pro_img'];?>" alt="<?=$value['first_name']." ".$value['last_name'];?>" class="circle">
 
-                              <p class="title">Rohan Bhagwan Bors</p></a>
+                              <p class="title"><?=$value['first_name']." ". $value["last_name"];?></p></a>
 
-                             <span class="grey-text text-darken-1 ultra-small">Request on:2017-10-19 12:41:56</span>
+                             <span class="grey-text text-darken-1 ultra-small"><?=$value['datetime'];?></span>
 
-							  <p>i have one bag , but its one month used.</p>
+							  <p><?=$value['message'];?></p>
                             </li>
                             <?php endforeach;?>                        
                         </ul>
