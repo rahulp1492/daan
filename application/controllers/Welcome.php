@@ -36,4 +36,10 @@ class Welcome extends CI_Controller {
 		$data['content']   = 'front/login';
 		$this->load->view('front/layout/template',$data);
 	}
+
+	public function mail_kela($value='')
+	{
+		$this->load->library('email_template');
+		$this->email_template->zala_send(array('to'=> 'singharyan015@gmail.com', 'subject'=>'Your account activation'));
+	}
 }

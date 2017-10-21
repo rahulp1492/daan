@@ -49,6 +49,7 @@ defined('FOPEN_WRITE_CREATE_STRICT')            OR define('FOPEN_WRITE_CREATE_ST
 defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 
 define('DESCRIPTION', "Daan is top rated donation site");
+define('USER', 'user');
 /*
 |--------------------------------------------------------------------------
 | Exit Status Codes

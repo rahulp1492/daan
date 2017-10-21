@@ -4,6 +4,7 @@
 <head>		
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
 	<?php 
 	if(isset($meta))
 		echo '<meta name="description" content="'.$meta.'"/>';
@@ -26,83 +27,76 @@
 
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<style>
-		body {
-			display: flex;
-			min-height: 100vh;
-			flex-direction: column;
-		}
+	body {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
 
-		main {
-			flex: 1 0 auto;
-		}
+	main {
+		flex: 1 0 auto;
+	}
 
-		body {
-			background: #fff;
-		}
+	body {
+		background: #fff;
+	}
 
-		.input-field input[type=date]:focus + label,
-		.input-field input[type=text]:focus + label,
-		.input-field input[type=email]:focus + label,
-		.input-field input[type=password]:focus + label {
-			color: #e91e63;
-		}
+	.input-field input[type=date]:focus + label,
+	.input-field input[type=text]:focus + label,
+	.input-field input[type=email]:focus + label,
+	.input-field input[type=password]:focus + label {
+		color: #e91e63;
+	}
 
-		.input-field input[type=date]:focus,
-		.input-field input[type=text]:focus,
-		.input-field input[type=email]:focus,
-		.input-field input[type=password]:focus {
-			border-bottom: 2px solid #e91e63;
-			box-shadow: none;
-		}
+	.input-field input[type=date]:focus,
+	.input-field input[type=text]:focus,
+	.input-field input[type=email]:focus,
+	.input-field input[type=password]:focus {
+		border-bottom: 2px solid #e91e63;
+		box-shadow: none;
+	}
 </style>
 </head>
-<body>
-	<nav class="teal lighten-2" role="navigation">
+<body class="white">
+	<div class="navbar-fixed">
+		<nav class="blue darken-1 white-text" role="navigation">
 
-		<div class="nav-wrapper container">
+			<div class="nav-wrapper container">
 
-			<a id="logo-container" href="index.php" class="brand-logo" style="font-family:'Samarkan Normal';">Daan</a>
+				<a id="logo-container" href="index.php" class="brand-logo white-text"><b>Swa</b><span style="font-family:'Samarkan Normal';">Daan</span></a>
 
-			<ul class="right hide-on-med-and-down">
+				<ul class="right hide-on-med-and-down">
 
-				<li><a href="index.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">home</i>Home</a></li>
+					<li><a href="<?=base_url()?>" class="white-text w3-bar-item w3-button w3-hide-small">Home</a></li>
 
+					<li><a href="#mkdonation" class="white-text w3-bar-item w3-button w3-hide-small"> Make Donation</a></li>
 
-				<li><a href="myprofile.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons mdi-action-search left">account_circle</i> Profile</a></li>
+					<li><a href="#tkdonation" class="white-text w3-bar-item w3-button w3-hide-small">Take Donation</a></li>
 
-				<li><a href="#" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">timeline</i>Timeline</a></li>
+					<li><a href="about.php" class="white-text w3-bar-item w3-button w3-hide-small">About Us</a></li>
 
-				<li><a href="my_request.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">line_weight</i>Donation Requests</a></li>
+					<li><a href="contact.php" class="white-text w3-bar-item w3-button w3-hide-small">Contact Us</a></li>
 
-				<li><a href="logout.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">power_settings_new</i>logout</a></li>
+					<li><a href="<?=base_url('login')?>" class="blue-text w3-bar-item w3-button w3-hide-small white"><i class="material-icons left">person_add</i>Login</a></li>
+				</ul>
+				<ul id="nav-mobile" class="side-nav blue darken-2 white-text">
 
-				<li><a href="login.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">exit_to_app</i>Login</a></li>
+					<li><a href="index.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">home</i>Home</a></li>
 
-				<li><a href="signup.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left	">person_add</i>Signup</a></li>
+					<li><a href="myprofile.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons mdi-action-search left">account_circle</i> Profile</a></li>
 
-			</ul>
+					<li><a href="#" class="white-text w3-bar-item w3-button w3-hide-sma><i class="material-icons left">timeline</i>Timeline</a></li>
 
-			<ul id="nav-mobile" class="side-nav">
+					<li><a href="my_request.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">line_weight</i>Donation Requests</a></li>
 
-				<li><a href="index.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">home</i>Home</a></li>
+					<li><a href="logout.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></li>
+					<li><a href="<?=base_url('login')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
 
-				<li><a href="myprofile.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons mdi-action-search left">account_circle</i> Profile</a></li>
+					<li><a href="signup.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">person_add</i>Signup</a></li>
+				</ul>
 
-				<li><a href="#" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">timeline</i>Timeline</a></li>
+				<a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+	</div>
 
-				<li><a href="my_request.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">line_weight</i>Donation Requests</a></li>
-
-				<li><a href="logout.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></li>
-
-				<li><a href="login.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
-
-				<li><a href="signup.php" class="w3-bar-item w3-button w3-hide-small"><i class="material-icons left">person_add</i>Signup</a></li>
-
-			</ul>
-
-			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-
-		</div>
-
-	</nav>
-	

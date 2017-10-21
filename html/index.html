@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>		
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  	   <title>SWADAAN|Home</title>
+
+		  <!-- CSS  -->
+
+		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+		  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+		  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+		  <link href="css/core.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+		  <link href="fonts/hindi.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	</head>
+	<body class="white">
+		 <div class="navbar-fixed">
+		  <nav class="blue darken-1 white-text" role="navigation">
+
+		    <div class="nav-wrapper container">
+
+		      <a id="logo-container" href="index.php" class="brand-logo white-text"><b>Swa</b><span style="font-family:'Samarkan Normal';">Daan</span></a>
+
+		      <ul class="right hide-on-med-and-down">
+
+			  <li><a href="index.php" class="white-text w3-bar-item w3-button w3-hide-small">Home</a></li>
+
+		        <li><a href="#mkdonation" class="white-text w3-bar-item w3-button w3-hide-small"> Make Donation</a></li>
+
+				<li><a href="#tkdonation" class="white-text w3-bar-item w3-button w3-hide-small">Take Donation</a></li>
+
+				<li><a href="about.php" class="white-text w3-bar-item w3-button w3-hide-small">About Us</a></li>
+
+		        <li><a href="contact.php" class="white-text w3-bar-item w3-button w3-hide-small">Contact Us</a></li>
+
+		        <li><a href="login.php" class="blue-text w3-bar-item w3-button w3-hide-small white"><i class="material-icons left	">person_add</i>Login/Signup</a></li>
+
+				
+
+		      </ul>
+
+
+
+		      <ul id="nav-mobile" class="side-nav blue darken-2 white-text">
+
+			  <li><a href="index.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">home</i>Home</a></li>
+
+		        <li><a href="myprofile.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons mdi-action-search left">account_circle</i> Profile</a></li>
+
+				<li><a href="profile.php?uid=<?php echo $_SESSION['uid'];?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">timeline</i>Timeline</a></li>
+
+				<li><a href="my_request.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">line_weight</i>Donation Requests</a></li>
+
+		        <li><a href="logout.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></li>
+				<li><a href="login.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+
+		        <li><a href="signup.php" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">person_add</i>Signup</a></li>
+
+
+
+		      </ul>
+
+		      <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+
+		    </div>
+
+		  </nav>
+		</div>
+		  <div id="index-banner" class="parallax-container">
+		    <div class="section no-pad-bot">
+		      <div class="container">
+		        <br><br><br><br><br>
+		        <h1 class="header center">We can Help Someone</h1>
+		        <div class="row center">
+		          <h5 class="header col s12 light">The value of a man resides in what he gives and not in what he is capable of receiving.</h5>
+		        </div>
+		        <div class="row center">
+		          <a href="#" id="download-button" class="btn-large btn-floating  waves-effect waves-light blue darken-2"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+		        </div>
+		        <br><br>
+
+		      </div>
+		    </div>
+		    <div class="parallax"><img src="img/slider.jpg" alt="Unsplashed background img 1" style="display: block; transform: translate3d(-50%, 145px, 0px);"></div>
+		  </div>
+		  <section>
+		  	<div class="container">
+		  		<div class="container">
+	            <div class="row">
+	              <div class="col s12 m12 l12">
+	                <h1 class="breadcrumbs-title">Make Donation</h1>
+	                 <p style="margin-top: -2px;">List of real life heores , angles for all </p>
+	              </div>
+	            </div>
+	          </div>
+		  	  <div class="row">
+		  		
+
+		  			<div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  			</div>
+
+		  			<div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12">
+		  				 <a href="#" class="btn right blue darken-2">Load More <i class="fa fa-chevron-right" aria-hidden="true"></i> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		  				 <br/><br/>
+		  				</div>
+
+		  	  </div>
+		  	</div>
+		  </section>
+
+		  <section class="black lighten-2 white-text">
+		  		<div class="container">
+	            <div class="row">
+	              <div class="col s12 m12 l12">
+	                <h1 class="breadcrumbs-title">Open Donation</h1>
+	                <p style="margin-top: -2px;">This is open request where other users will response , respectively</p>
+	              </div>
+	            </div>
+	          </div>
+		  		<div class="container">
+		  			<div class="row">
+		  				<div class="col s6 offset-l3 l3">
+		  					<a style="width:100%" class="btn blue darken-2 btn-wave btn-large">Do Donation</a>
+		  				</div>
+		  				<div class="col s6 l3">
+		  					<a style="width:100%" class="btn blue darken-2 btn-wave btn-large">Reqst Donation </a>
+		  				</div>
+		  			</div>
+		  		</div>
+		  		<br/>
+		  		<br/>
+		  </section>
+
+		  <section>
+		  	<div class="container">
+		  		<div class="container">
+	            <div class="row">
+	              <div class="col s12 m12 l12">
+	                <h1 class="breadcrumbs-title">Take Donation</h1>
+	                 <p style="margin-top: -2px;">List of real life heores , angles for all </p>
+	              </div>
+	            </div>
+	          </div>
+		  	  <div class="row">
+		  		
+
+		  			<div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  			</div>
+
+		  			<div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12 m4 l3">
+		  				 <div class="card hoverable" style="height:325px;">
+		  				 	<div class="card-move-up card-image waves-effect waves-block waves-light">  
+				              <a href="" alt="donation type ">
+				              	<img src="img/slider.jpg" height="180px;" alt="donation type ">
+				              </a>
+				            </div>
+				            <div class="card-content" style="padding:8px;">
+				            	<a style="right:31px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				            	
+				            	<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i>a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a</i></span>
+				            	<p >
+				            		<b>Donation Type</b>
+				            		
+				            	</p>
+				            	
+				            	<div class="row">
+				            		<div class="col s2">
+				            			<img style="height: 30px; width:30px;" src="img/slider.jpg" alt="<?php echo $pagerow['user_name'];?>" class="circle responsive-img valign profile-image">
+				            		</div>
+				            		<div class="col s9"> By <a style="text-decoration:none;" href="#">User name</a>
+				            			
+				            		</div>
+				            		
+				            	</div>
+				            	<div class="center green-text" style="margin-top:-20px;">
+				            		
+					            		<span><b>Raised: 5 Units</b></span>
+					            		<span style="color: #ce7653; margin-left: 10px;">Goal: 50 Units</span> 
+								  </div>
+				            	</div> 
+				         </div>
+		  				 </div>
+
+		  				 <div class="col s12">
+		  				 <a href="#" class="btn right blue darken-2">Load More <i class="fa fa-chevron-right" aria-hidden="true"></i> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		  				 <br/><br/>
+		  				</div>
+
+		  	  </div>
+		  	</div>
+		  </section>
+
+		  <section class="black lighten-2 white-text">
+		  		<div class="container">
+	            <div class="row">
+	              <div class="col s12 m12 l12">
+	                <h1 class="breadcrumbs-title">Angles</h1>
+	                <p style="margin-top: -2px;">List of real life heores , angles for all </p>
+	              </div>
+	            </div>
+	          </div>
+		  		<div class="container">
+		  			<div class="row">
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  				<div class="col s6 m4 l2">
+		  					<div class="card">
+		  						<div class="card-image waves-effect waves-block waves-light">
+                                           
+                                            <img src="img/background2.jpeg" alt="product-img">
+                                            <span class="card-title">Rahul Pawar</span>
+                                 </div>
+                                 
+		  					</div>
+		  				</div>
+		  			</div>
+		  		</div>
+		  		<br/>
+		  		<br/>
+		  </section>
+
+  <footer class="page-footer blue darken-2">
+
+    <div class="container" style="position:sticky;">
+
+      <div class="row">
+
+        <div class="col l6 s12">
+
+          <h5 class="white-text">Company Bio</h5>
+
+          <p class="grey-text text-lighten-4">We are a team working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+		  <p class="grey-text text-lighten-4">DAAN did not take money for any type of donation. Its end to end transaction where one user donates by his wish and one user receives it by his wish.</p>
+
+		  <p class"grey-text text-lighten-4"><b><i>"Be a part of the breakthrough and make someone’s dream come true."</i></b></p>
+
+        </div>
+
+		 
+
+        <div class="col l3 s12">
+
+          <h5 class="white-text">Useful Links</h5>
+
+          <ul>
+
+            <li><a class="white-text" href="our_team.php">Our Team</a></li>
+
+            <li><a class="white-text" href="contact_us.php">Contact Us</a></li>
+          </ul>
+
+        </div>
+
+        <div class="col l3 s12 black">
+
+          <h5 class="white-text">News Letter</h5>
+
+          <ul>
+
+            <li><input type="email" placeholder="Email address here" /></li>
+
+            <li><a class="btn blue" style="width:100%" href="#!">Subscribe Now</a></li>
+
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-copyright">
+
+      <div class="container">
+
+      Made by <a class="brown-text text-lighten-3" href="http://centralwal.com">centralwal.com</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+	
+		  <!--  Scripts-->
+
+		  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+		  <script src="js/materialize.js"></script>
+
+		  <script src="js/init.js"></script>
+
+		  <script src="js/plugins.js"></script>
+
+	</body>
+</html>

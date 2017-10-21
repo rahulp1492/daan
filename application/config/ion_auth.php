@@ -38,8 +38,8 @@ $config['tables']['login_attempts']  = 'login_attempts';
  | Joins from users.id
  | Joins from groups.id
  */
-$config['join']['users']  = 'user_id';
-$config['join']['groups'] = 'group_id';
+ $config['join']['users']  = 'user_id';
+ $config['join']['groups'] = 'group_id';
 
 /*
  | -------------------------------------------------------------------------
@@ -82,8 +82,8 @@ $config['salt_prefix']    = version_compare(PHP_VERSION, '5.3.7', '<') ? '$2a$' 
  | The controller should check this function and act
  | appropriately. If this variable set to 0, there is no maximum.
  */
-$config['site_title']                 = "Example.com";       // Site Title, example.com
-$config['admin_email']                = "admin@example.com"; // Admin Email, admin@example.com
+$config['site_title']                 = "SwaDaan";       // Site Title, example.com
+$config['admin_email']                = "testing@kodwell.co.uk"; // Admin Email, admin@example.com
 $config['default_group']              = 'members';           // Default group, use name
 $config['admin_group']                = 'admin';             // Default administrators group, use name
 $config['identity']                   = 'email';             // You can use any unique column in your table as identity column. The values in this column, alongside password, will be used for login purposes
@@ -98,12 +98,12 @@ $config['track_login_attempts']       = TRUE;                // Track the number
 $config['track_login_ip_address']     = TRUE;                // Track login attempts by IP Address, if FALSE will track based on identity. (Default: TRUE)
 $config['maximum_login_attempts']     = 3;                   // The maximum number of failed login attempts.
 $config['lockout_time']               = 600;                 /* The number of seconds to lockout an account due to exceeded attempts
-							        You should not use a value below 60 (1 minute) */
+You should not use a value below 60 (1 minute) */
 $config['forgot_password_expiration'] = 0;                   // The number of milliseconds after which a forgot password request will expire. If set to 0, forgot password requests will not expire.
 $config['recheck_timer']              = 0;                   /* The number of seconds after which the session is checked again against database to see if the user still exists and is active.
 							           Leave 0 if you don't want session recheck. if you really think you need to recheck the session against database, we would
-								   recommend a higher value, as this would affect performance */
-								
+							           recommend a higher value, as this would affect performance */
+
 
 /*
  | -------------------------------------------------------------------------
@@ -112,8 +112,8 @@ $config['recheck_timer']              = 0;                   /* The number of se
  | remember_cookie_name Default: remember_code
  | identity_cookie_name Default: identity
  */
-$config['remember_cookie_name'] = 'remember_code';
-$config['identity_cookie_name'] = 'identity';
+ $config['remember_cookie_name'] = 'remember_code';
+ $config['identity_cookie_name'] = 'identity';
 
 /*
  | -------------------------------------------------------------------------
@@ -123,9 +123,18 @@ $config['identity_cookie_name'] = 'identity';
  | 	  'file' = Use the default CI config or use from a config file
  | 	  array  = Manually set your email config settings
  */
-$config['use_ci_email'] = FALSE; // Send Email using the builtin CI email class, if false it will return the code and the identity
+$config['use_ci_email'] = TRUE; // Send Email using the builtin CI email class, if false it will return the code and the identity
 $config['email_config'] = array(
+	'protocol' => 'smtp',
+	'smtp_host' => 'ssl://kodwell.co.uk',
+	'smtp_port' => 465,
+	'smtp_user' => 'testing@kodwell.co.uk',
+	'smtp_pass' => 'Welcome@100',
 	'mailtype' => 'html',
+	'newline'  => "\r\n",
+	'smtp_timeout'=> '7',
+	'charset'  => 'utf-8',
+	'validation'=> TRUE
 );
 
 /*
@@ -135,7 +144,7 @@ $config['email_config'] = array(
  | Folder where email templates are stored.
  | Default: auth/
  */
-$config['email_templates'] = 'auth/email/';
+ $config['email_templates'] = 'email/';
 
 /*
  | -------------------------------------------------------------------------
@@ -143,7 +152,7 @@ $config['email_templates'] = 'auth/email/';
  | -------------------------------------------------------------------------
  | Default: activate.tpl.php
  */
-$config['email_activate'] = 'activate.tpl.php';
+ $config['email_activate'] = 'activate.tpl.php';
 
 /*
  | -------------------------------------------------------------------------
@@ -151,7 +160,7 @@ $config['email_activate'] = 'activate.tpl.php';
  | -------------------------------------------------------------------------
  | Default: forgot_password.tpl.php
  */
-$config['email_forgot_password'] = 'forgot_password.tpl.php';
+ $config['email_forgot_password'] = 'forgot_password.tpl.php';
 
 /*
  | -------------------------------------------------------------------------
@@ -159,7 +168,7 @@ $config['email_forgot_password'] = 'forgot_password.tpl.php';
  | -------------------------------------------------------------------------
  | Default: new_password.tpl.php
  */
-$config['email_forgot_password_complete'] = 'new_password.tpl.php';
+ $config['email_forgot_password_complete'] = 'new_password.tpl.php';
 
 /*
  | -------------------------------------------------------------------------
@@ -172,8 +181,8 @@ $config['email_forgot_password_complete'] = 'new_password.tpl.php';
  | default password, 'password', changes to
  | fbaa5e216d163a02ae630ab1a43372635dd374c0 with default salt.
  */
-$config['salt_length'] = 22;
-$config['store_salt']  = FALSE;
+ $config['salt_length'] = 22;
+ $config['store_salt']  = FALSE;
 
 /*
  | -------------------------------------------------------------------------

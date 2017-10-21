@@ -19,7 +19,7 @@
   ?>
   <div id="card-alert" class="card red lighten-5">
     <div class="card-content red-text">
-      <p>DANGER : <?php echo $this->session->flashdata('danger'); ?></p>
+      <p>DANGER : <?php echo $this->session->flashdata('danger');?></p>
     </div>
     <button type="button" class="close red-text" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">×</span>
