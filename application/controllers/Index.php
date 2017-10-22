@@ -57,15 +57,25 @@ class Index extends CI_Controller {
 	function make_donaton_reqst($redirect){
 		//print_r($_POST);
 		//redirect(base_url().$this->uri->uri_string(), 'refresh');
-		//echo $this->uri->uri_string();
+		//var_dump($redirect);
 		$this->form_validation->set_rules("message","message","required|max_length[150]");
 		$this->form_validation->set_rules("donate_qty","Quantity","required|numeric|less_than_equal_to[10]");
 		if($this->form_validation->run()){
-			print_r($_POST);
+			if(!isset($_SESSION['identity'])){
+				$this->session->set_flashdata('warning',"Please Login,To Make Request");
+				redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+			}else{
+				//datbase code
+				$donid=$this->master_model->getRecords('donation',array('slug'=>$redirect),'id');
+				$insert = array('donationid' => , );
+				$this->session->set_flashdata('success',"Thank you, Request has been Made");
+				redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+			}
+			//print_r($_POST);
 		}else{
-			//$this->session->set_flashdata('danger',validation_errors());
-			//redirect(base_url().$this->uri->uri_string(), 'refresh');
-			echo validation_errors();
+			$this->session->set_flashdata('danger',validation_errors());
+			redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+			//echo validation_errors();
 		}
 		
 	}

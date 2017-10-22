@@ -39,7 +39,8 @@
 							<div class="row">
 					              <div class="card">
 					                  <h4 class="header1 center">Make request</h4>
-					                  <form method="post" action="<?=base_url().INDEXPHP;?>index/make_donaton_reqst/<?=$this->uri->uri_string();?>">
+					                  <p><?php $this->load->view('front/layout/alert') ?></p>
+					                  <form method="post" action="<?=base_url().INDEXPHP;?>index/make_donaton_reqst/<?=$this->uri->segment(3);?>">
 					                   <div class="row">
 					                    <div class="input-field col s6">
 					                      <textarea required="" maxlength="150" id="textarea" name="message" class="materialize-textarea"></textarea>
