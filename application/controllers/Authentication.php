@@ -76,6 +76,7 @@ class Authentication extends CI_Controller {
 
 	public function register($value='')
 	{
+		print_r($_POST);die();
 		$data['page_name'] = "Register";		
 		$data['content']   = 'front/register';
 		$this->load->view('front/layout/template',$data);

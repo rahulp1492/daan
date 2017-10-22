@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.43.231/daan_ci/';
+$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/daan_ci/';
 
 /*
 |--------------------------------------------------------------------------

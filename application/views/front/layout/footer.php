@@ -77,6 +77,7 @@ $(document).ready(function(){
         $("#err_newsletter_email").html(data);
     });
   });
+    $('select').material_select();
 },"html");
 </script>
 </body>
