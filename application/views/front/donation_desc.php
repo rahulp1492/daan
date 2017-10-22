@@ -35,36 +35,32 @@
 				</section>
 				<section>
 					<div class="row">
-						<div class="col l5">
-							<div>
-								<h5>Make Donation</h5>
-								<form method="POST" action="<?php echo base_url().'index.php/index/';?>">
-									<div class="row">
-										<div class="col s12">
-											<div class="input-field margin">
-											 <textarea required="" maxlength="80" id="textarea" row="2" name="message" class="materialize-textarea"></textarea>
+						<div class="col l12">
+							<div class="row">
+					              <div class="card">
+					                  <h4 class="header1 center">Make request</h4>
+					                  <form method="post" action="<?=base_url().INDEXPHP;?>index/make_donaton_reqst/<?=$this->uri->uri_string();?>">
+					                   <div class="row">
+					                    <div class="input-field col s6">
+					                      <textarea required="" maxlength="150" id="textarea" name="message" class="materialize-textarea"></textarea>
 											 <label for="textarea" class="">Say why you ?</label>
-											</div>
-										</div>
-										<div class="col s12">
-											<div class="input-field">
-												<input type="number" min="1" max="10">
+					                    </div>
+					                    <div class="input-field col s6">
+					                      <input type="number" min="1" name="donate_qty" style="padding-bottom: 36px;" max="10">
 												 <label for="textarea" class="">Please Enter Quantity</label> 
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="center">
-											<i class="waves-effect waves-light btn waves-input-wrapper" style=""><input type="submit" class="waves-button-input" name="request" value="Make Request"></i>
-										</div>
-									</div>
-								</form>
-							</div>
+					                    </div>
+					                    <div class="input-field col s12 center">
+					                        <input type="submit" class="waves-button-input btn waves-effect"  value="Make Request" />				                      
+					                    </div>
+					                  </div>
+					                </form>
+					               </div>
+					          </div>
 						</div>
-						<div class="col l7">
+						<div class="col l12">
 							<ul class="collection with-header">
 							<li class="collection-header">
-								<h4>Interested people List</h4>
+								<h4>Requested people List</h4>
 							 </li>
                             <?php foreach ($req_list as $key => $value):?>
 							  <li class="collection-item avatar"> 

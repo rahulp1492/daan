@@ -3,11 +3,11 @@
       <div class="section"></div>
       <h5 class="indigo-text">"Lets get signup to enjoy happiness of donation"</h5>
       <div class="section"></div>
-
+        <?php $this->load->view('front/layout/alert') ?>
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form class="col s12" method="post">
+          <form class="col s12" method="post" action="<?=base_url('registration')?>">
             <div class="row margin">
               <div class="input-field col s12 m6 l6">
                 <input id="first_name" value="" type="text" name="first_name" required="">
@@ -75,7 +75,7 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <button type="submit" class="col s12 btn btn-large waves-effect indigo">Register Now</button> 
+                <button type="submit" name="btn_register" class="col s12 btn btn-large waves-effect indigo">Register Now</button> 
               </div>
               <div class="input-field col s12">
                 <p class="margin center medium-small sign-up">Already have an account? <a href="<?= base_url()?>login">Login</a></p>

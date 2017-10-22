@@ -30,14 +30,14 @@
 		  			?>
 		  			<div class="col s12 m4 l3">
 		  				<div class="card hoverable" style="height:325px;">
-
+		  				 
 		  					<div class="card-move-up card-image waves-effect waves-block waves-light">  
-		  						<a href="" alt="donation type ">
+		  						<a href="<?=base_url().INDEXPHP.'index/donate_description/'.$value['slug'];?>" alt="donation type ">
 		  							<img src="<?=base_url().$value['image'];?>" height="180px;" alt="<?=$value['donation_name'];?>">
 		  						</a>
 		  					</div>
 		  					<div class="card-content" style="padding:8px;">
-		  						<a style="right:15px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		  						<a style="right:15px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right" href="<?=base_url().INDEXPHP.'index/donate_description/'.$value['slug'];?>"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
 		  						<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i><?=$value['donation_title'];?></i></span>
 		  						<p >
@@ -112,12 +112,12 @@
 		  			<div class="col s12 m4 l3">
 		  				<div class="card hoverable" style="height:325px;">
 		  					<div class="card-move-up card-image waves-effect waves-block waves-light">  
-		  						<a href="" alt="donation type ">
+		  						<a href="<?=base_url().INDEXPHP.'index/donate_description/'.$value['slug'];?>" alt="donation type ">
 		  							<img src="<?=base_url().$value['image'];?>" height="180px;" alt="<?=$value['donation_name'];?>">
 		  						</a>
 		  					</div>
 		  					<div class="card-content" style="padding:8px;">
-		  						<a style="right:15px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		  						<a href="<?=base_url().INDEXPHP.'index/donate_description/'.$value['slug'];?>" style="right:15px;" class="btn-floating btn-move-up waves-effect waves-light blue darken-2 right"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
 		  						<span style="padding-bottom:4px;" class="grey-text text-darken-4"><i><?=$value['donation_title'];?></i></span>
 		  						<p >

@@ -72,7 +72,7 @@
 $(document).ready(function(){
   $("#subscribe").submit(function(e){
     e.preventDefault()
-     $.post("<?php echo base_url();?>index.php/index/newsletter",{user_email:$("#sub_email").val()},function(data, status){
+     $.post("<?php echo base_url().INDEXPHP;?>index/newsletter",{user_email:$("#sub_email").val()},function(data, status){
         console.log($("#subscribe").serialize()+"sdfs");
         $("#err_newsletter_email").html(data);
     });

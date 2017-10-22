@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2017 at 04:28 AM
+-- Generation Time: Oct 23, 2017 at 12:55 AM
 -- Server version: 5.7.19-0ubuntu0.16.04.1
 -- PHP Version: 7.0.22-0ubuntu0.16.04.1
 
@@ -124,6 +124,13 @@ CREATE TABLE `login_attempts` (
   `time` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `login_attempts`
+--
+
+INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
+(1, '192.168.43.1', 'rahulep@webwingtechnologies.com', 1508693390);
+
 -- --------------------------------------------------------
 
 --
@@ -152,6 +159,19 @@ CREATE TABLE `news_letter` (
   `email` varchar(100) NOT NULL,
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `news_letter`
+--
+
+INSERT INTO `news_letter` (`id`, `email`, `datetime`) VALUES
+(1, 'singharyan015@gmail.com', '2017-10-21 23:01:17'),
+(2, 'supports@hoyowatch.com', '2017-10-21 23:02:42'),
+(3, 'user_email@gmail.com', '2017-10-21 23:03:35'),
+(4, 'r@gmail.com', '2017-10-21 23:12:13'),
+(5, 'm@gmail.com', '2017-10-21 23:14:05'),
+(6, 'rahulp1492@yahoo.com', '2017-10-21 23:27:55'),
+(7, 'rahulp1492@yahoo.co', '2017-10-22 17:28:14');
 
 -- --------------------------------------------------------
 
@@ -212,7 +232,6 @@ CREATE TABLE `users` (
   `active` tinyint(1) UNSIGNED DEFAULT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -220,10 +239,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `pro_img`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'assets/img/profile.png', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1508608757, 1, 'Admin', 'istrator', 'ADMIN', '0'),
-(2, '192.168.225.47', 'shkasd1992@gmail.com', '$2y$08$xuuvmADR9jshQzC/.B8XDOnkArBlLd2EhoqLBWZOFd/7I92RcHTja', 'assets/img/profile.png', NULL, 'shkasd1992@gmail.com', NULL, NULL, NULL, NULL, 1508608828, 1508626230, 1, 'Rahul', 'Pawar', 'daan', '7709817985'),
-(4, '192.168.225.47', 'rahulp1492@yahoo.com', '$2y$08$8qgdWEbQhmTyfsfNM4IeN.nRzFlHUssH/9J.nxl8EvL4YlPyHRj9y', 'assets/img/profile.png', NULL, 'rahulp1492@yahoo.com', NULL, 'UnCjuwT4Low6eY3cNQFtmee4c89a5071205c8d11', 1508619671, NULL, 1508608849, 1508616907, 1, 'Praful', 'pawar', 'dann', '7709817985');
+INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `pro_img`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`) VALUES
+(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', 'assets/img/profile.png', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1508679523, 1, 'Admin', 'istrator', '0'),
+(2, '192.168.225.47', 'shkasd1992@gmail.com', '$2y$08$iBD2./OJVQSpVlzzChgJw.4xojgBKdtC8WHLYusjcBM5FInLhz9Eq', 'assets/img/profile.png', NULL, 'shkasd1992@gmail.com', NULL, NULL, NULL, NULL, 1508608828, 1508679010, 1, 'Rahul', 'Pawar', '7709817985'),
+(4, '192.168.225.47', 'rahulp1492@yahoo.com', '$2y$08$yOj1DPBKmvSxbQSFS94VCONl3dMoDaVnJEpy2HnSYV.6/LYa/.EPO', 'assets/img/profile.png', NULL, 'rahulp1492@yahoo.com', NULL, NULL, NULL, NULL, 1508608849, 1508693365, 1, 'Praful', 'pawar', '7709817985'),
+(7, '::1', 'singharyan015@gmail.com', '$2y$08$pBfS0.cArLRRXJ0HMtJkteGcU0cGbxZUSwxpDHyXUMTyfyBNg.pF6', 'assets/img/profile.png', NULL, 'singharyan015@gmail.com', NULL, NULL, NULL, NULL, 1508699304, 1508699516, 1, 'aryan', 'Singh', '8055389747');
 
 -- --------------------------------------------------------
 
@@ -245,7 +265,10 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 3, 2),
-(4, 4, 2);
+(4, 4, 2),
+(5, 5, 2),
+(6, 6, 2),
+(7, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -367,12 +390,12 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `news_letter`
 --
 ALTER TABLE `news_letter`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `report`
 --
@@ -387,12 +410,12 @@ ALTER TABLE `transaction`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `user_request`
 --
