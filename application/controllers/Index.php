@@ -66,10 +66,29 @@ class Index extends CI_Controller {
 				redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
 			}else{
 				//datbase code
-				$donid=$this->master_model->getRecords('donation',array('slug'=>$redirect),'id');
-				$insert = array('donationid' => , );
-				$this->session->set_flashdata('success',"Thank you, Request has been Made");
-				redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+					$donid=$this->master_model->getRecords('donation',array('slug'=>$redirect),'id');
+					if($this->master_model->getRecordCount('user_request',array('uid'=>$_SESSION['user_id'],'donationid' =>$donid[0]['id']))>0){
+						//allready post
+						$this->session->set_flashdata('warning',"Request already has been made,only one request allowed");
+						redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+					}else{
+
+						//print_r($donid[0]['id']);die();
+						$insert = array('donationid' =>$donid[0]['id'],
+									'message'=>$this->input->post('message'),
+									'qty'=>$this->input->post('donate_qty'),
+									'uid'=>$_SESSION['user_id']
+									 );
+						if($this->master_model->insertRecord('user_request',$insert)){
+						  $this->session->set_flashdata('success',"Thank you, Request has been Made");
+						  redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+					    }else{
+					    	$this->session->set_flashdata('danger',"opps try again");
+							redirect(base_url().INDEXPHP."index/donate_description/".$redirect, 'refresh');
+					    }
+
+					}
+					
 			}
 			//print_r($_POST);
 		}else{

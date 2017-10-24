@@ -38,7 +38,7 @@
 						<div class="col l12">
 							<div class="row">
 					              <div class="card">
-					                  <h4 class="header1 center">Make request</h4>
+					                  <h4 id="makerequest" class="header1 center">Make request</h4>
 					                  <p><?php $this->load->view('front/layout/alert') ?></p>
 					                  <form method="post" action="<?=base_url().INDEXPHP;?>index/make_donaton_reqst/<?=$this->uri->segment(3);?>">
 					                   <div class="row">
