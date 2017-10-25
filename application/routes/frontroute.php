@@ -8,6 +8,7 @@ $route['login-process'] 		= 'authentication/login_process';
 $route['forgot-password'] 		= 'authentication/forgot_password';
 $route['reset-password/(:any)'] = 'authentication/reset_password/$1';
 $route['activation/(:any)/(:any)'] = 'authentication/activate/$1/$2';
+$route['(:any)/login'] 			= 'authentication/session/$1';
 
 /**
  * After Login Routes

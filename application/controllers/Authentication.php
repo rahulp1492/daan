@@ -13,6 +13,68 @@ class Authentication extends CI_Controller {
 		$this->lang->load('auth');
 	}
 
+	public function session($provider_name){
+
+		$this->load->library('oauth2/OAuth2');
+		$this->load->config('oauth2', TRUE);
+
+		$provider = $this->oauth2->provider($provider_name, array(
+			'id' => $this->config->item($provider_name.'_id', 'oauth2'),
+			'secret' => $this->config->item($provider_name.'_secret', 'oauth2'),
+		));
+
+		if (!$this->input->get('code'))
+		{
+			$provider->authorize();
+		}
+		else
+		{
+			try
+			{
+				$token = $provider->access($this->input->get('code'));
+				$user  = $provider->get_user_info($token);
+				$this->addUser($user, $provider_name);
+			}
+			catch (OAuth2_Exception $e)
+			{
+				show_error('That didnt work: '.$e);
+			}
+		}
+	}
+
+	public function addUser($user='', $provider_name=""){
+		$array_data						=	array();
+		$array_data['first_name']		=	$user['first_name'];
+		$array_data['last_name']		=	$user['last_name'];
+		$array_data['email']			=	$user['email'];
+		$array_data['active']			=	1;
+
+		if(isset($user['email']) || $user['email']!=NULL){
+			
+			if($this->ion_auth->setFacebookSession($user['email'])){
+				redirect(base_url().'user/profile');				
+			}else{
+
+				if ($this->master_model->insertRecord('users',$array_data))
+				{
+            		// check to see if we are creating the user
+            		// redirect them back to the admin page
+					if($this->ion_auth->setFacebookSession($user['email'])){
+						redirect(base_url().'user/profile');				
+					}
+				}
+				else
+				{
+					$this->session->set_flashdata('danger','Error While login to website.');
+					redirect(base_url().'login');
+				}					
+			}
+		}else{
+			$this->session->set_flashdata('danger','Email not registered on '.$provider_name.'.');
+			redirect(base_url().'login');
+		}
+	}
+
 	public function login($value='')
 	{
 		$data = $this->session->flashdata('data');

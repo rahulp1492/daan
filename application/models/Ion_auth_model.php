@@ -1959,6 +1959,28 @@ class Ion_auth_model extends CI_Model
 		return FALSE;
 	}
 
+	public function setFacebookSession($email='')
+	{
+		$this->trigger_events('extra_where');
+		$query = $this->db->select($this->identity_column.', id, email, last_login')
+		                  ->where('email', $email)
+				  		  ->where('active',1)
+		                  ->limit(1)
+		    			  ->order_by('id', 'desc')
+		                  ->get($this->tables['users']);
+
+		// if the user was found, sign them in
+		if ($query->num_rows() == 1)
+		{
+			$user = $query->row();
+
+			$this->update_last_login($user->id);
+
+			$this->set_session($user);
+			return TRUE;
+		}
+		return FALSE;
+	}
 
 	/**
 	 * create_group
