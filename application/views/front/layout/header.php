@@ -26,6 +26,8 @@
 	<link href="<?php echo base_url();?>assets/fonts/hindi.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	
+
 	<style>
 	body {
 		display: flex;

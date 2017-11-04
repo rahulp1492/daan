@@ -57,12 +57,17 @@
     </div>
 
   </footer>
+
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/materialize.js"></script>
   <script src="<?php echo base_url();?>assets/js/init.js"></script>
-<!-- <script src="<?php echo base_url();?>assets/js/plugins.min.js"></script>
--->      <script type="text/javascript">
+   
+<script src="<?php echo base_url();?>assets/js/myjs.js"></script>
+<!-- emoji js-->
+<!--end -->
+    <script type="text/javascript">
   $('#card-alert .close').click(function(){
     $("#card-alert").fadeOut( "slow", function() {
     });
