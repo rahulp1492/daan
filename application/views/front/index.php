@@ -72,7 +72,7 @@
 		  	</div>
 		  </section>
 
-		  <section class="black lighten-2 white-text">
+		  <section class="grey darken-4 white-text">
 		  	<div class="container">
 		  		<div class="row">
 		  			<div class="col s12 m12 l12">
@@ -152,7 +152,7 @@
 		  	</div>
 		  </section>
 
-		  <section class="black lighten-2 white-text">
+		  <section class="grey darken-4 white-text">
 		  	<div class="container">
 		  		<div class="row">
 		  			<div class="col s12 m12 l12">

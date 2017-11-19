@@ -39,15 +39,18 @@
 							<div class="row">
 					              <div class="card">
 					                  <h4 id="makerequest" class="header1 center">Make request</h4>
+					                  <?php if($this->session->flashdata('makerequest')){?>
 					                  <p><?php $this->load->view('front/layout/alert') ?></p>
+					                  <?php }?>
 					                  <form method="post" action="<?=base_url().INDEXPHP;?>index/make_donaton_reqst/<?=$this->uri->segment(3);?>">
 					                   <div class="row">
 					                    <div class="input-field col s6">
-					                      <textarea required="" maxlength="150" id="textarea" name="message" class="materialize-textarea"></textarea>
-											 <label for="textarea" class="">Say why you ?</label>
-					                    </div>
+					                      <textarea required="" data-emojiable="true" data-emoji-input="unicode" maxlength="150" id="textarea_req" name="message" class="materialize-textarea"></textarea>
+											 <label for="textarea_req" class="">Say why you ?</label>
+											 
+										</div>
 					                    <div class="input-field col s6">
-					                      <input type="number" min="1" name="donate_qty" style="padding-bottom: 36px;" max="10">
+					                      <input type="number" min="1" name="donate_qty" style="padding-bottom: 36px;" max="10" >
 												 <label for="textarea" class="">Please Enter Quantity</label> 
 					                    </div>
 					                    <div class="input-field col s12 center">
@@ -58,6 +61,7 @@
 					               </div>
 					          </div>
 						</div>
+						 					
 						<div class="col l12">
 							<ul class="collection with-header">
 							<li class="collection-header">
@@ -73,7 +77,33 @@
                              <span class="grey-text text-darken-1 ultra-small"><?=$value['datetime'];?></span>
 
 							  <p><?=$value['message'];?></p>
+							  <a class="right" href="#">Comments</a>
+							  <br/>
                             </li>
+                            <ul class="collection-header grey lighten-3">
+                            	<form action="<?=base_url().INDEXPHP;?>index/makeComment/<?=$this->uri->segment(3);?>" method="post">
+	                            	<li> <?php if($this->session->flashdata('comment')){?>
+	                            		<p><?php $this->load->view('front/layout/alert') ?></p>
+	                            		<?php } ?>
+	                            	</li>
+	                            	<li class="input-field">
+	                            		<input type="hidden" name="user_request_id" value="<?=$value['users_request_id'];?>"/>
+								  		 <i class=" material-icons prefix">border_color</i>
+								  	     <textarea name="comment" class="materialize-textarea"></textarea>
+								  		 <label for="textarea" class="">Make comments</label>
+								  		 <input type="submit" class="btn" style="width:180px;" value="post" />
+								  	</li>
+							    </form>
+							    <li class="collection-item grey lighten-3"></li>
+							  	<li class="collection-item avatar">
+							  		<a href="#"><img src="<?=base_url().$value['pro_img'];?>" alt="<?=$value['first_name']." ".$value['last_name'];?>" class="circle"></a>
+							  		<p>vxvdvd sds</p></li>
+							  	
+							  <li class="collection-item avatar">
+							  		<a href="#"><img src="<?=base_url().$value['pro_img'];?>" alt="<?=$value['first_name']." ".$value['last_name'];?>" class="circle"></a>
+							  		<p>vxvdvd sds</p></li>
+
+							  </ul>
                             <?php endforeach;?>                        
                         </ul>
 						</div>
