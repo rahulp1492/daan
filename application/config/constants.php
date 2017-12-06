@@ -51,6 +51,15 @@ defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREA
 define('DESCRIPTION', "Daan is top rated donation site");
 define('USER', 'user');
 define('INDEXPHP',"index.php/");
+
+define('PROJECT_NAME','Swadaan');
+define('ADMIN_LOGIN','admin_login');
+define('ADMIN_VIEW','admin');
+define('ADMIN_CTRL','admin');
+
+//Admin table constants
+define("CONTACT_ENQUIRY_TABLE", "contact_enquiry");
+define("USERS_TABLE", "users");
 /*
 |--------------------------------------------------------------------------
 | Exit Status Codes
