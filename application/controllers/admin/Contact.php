@@ -14,7 +14,6 @@ class Contact extends CI_Controller
     // manage contact
     public function index()
     {
-
         $data['per_page'] = $perpage = isset($_GET['per_page']) ? $_GET['per_page'] : 10;
         $data['page']     = (isset($_GET['page'])) ? $perpage * (($_GET['page']) - 1) : 0;
         $searchName       = $this->input->get('search_name');

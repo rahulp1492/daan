@@ -42,7 +42,7 @@
               <div class="input-field col s12 m6 l6">
                 <input id="pincode" type="text" value="" name="pincode" required="">
                 <span class="error" style="color:red;"></span>
-                <label for="pincode">Pincode</label>
+                <label for="pincode">* Pincode</label>
               </div>
             </div>
             <div class="row margin">
@@ -70,7 +70,7 @@
             <div class="row margin">
               <div class="input-field col s12">
                 <input id="password-again" type="password" name="confirm">
-                <label for="password-again">Re-type password</label>
+                <label for="password-again">Re-type Password</label>
               </div>
             </div>
             <div class="row">

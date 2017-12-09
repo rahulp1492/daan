@@ -70,6 +70,7 @@ class User extends CI_Controller
             $this->form_validation->set_rules('state', 'State', 'required|numeric');
             $this->form_validation->set_rules('city', 'City', 'required|numeric');
             $this->form_validation->set_rules('pin_code', 'Pin Code', 'required|numeric');
+
             if ($this->form_validation->run() == true) {
                 $password                          = $this->input->post('password');
                 $array_data                        = array();
@@ -107,9 +108,8 @@ class User extends CI_Controller
             }
         }
 
-        $data['state_data'] = $this->master_model->getRecords(STATES_TABLE, '', '', array('state_name' => 'ASC'));
-        $data['page_title'] = PROJECT_NAME . ' | Add Doctor';
-        $data['content']    = ADMIN_CTRL . '/doctor/doctor_add';
+        $data['page_title'] = PROJECT_NAME . ' | Add User';
+        $data['content']    = ADMIN_CTRL . '/user/user_add';
         $this->load->view(ADMIN_VIEW . '/template', $data);
     }
 
