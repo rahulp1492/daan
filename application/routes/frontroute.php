@@ -13,7 +13,7 @@ $route['login/(:any)']             = 'authentication/session/$1';
 /**
  * After Login Routes
  **/
-$route[USER . '/logout']          = USER . 'logout';
+$route[USER . '/logout']          = 'authentication/logout';
 $route[USER . '/change_password'] = USER . 'change_password';
 
 /**

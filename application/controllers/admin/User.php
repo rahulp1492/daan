@@ -35,6 +35,7 @@ class User extends CI_Controller
         $sqlQuery            = $sqlQry . ' LIMIT ' . $_pageRes['offset'] . ' ,' . $_pageRes['per_page'] . '';
         $dataSql             = $this->db->query($sqlQuery);
         $data['arr_user']    = $dataSql->result_array();
+        // dd($data['arr_user']);
         $data['search_name'] = isset($searchName) && $searchName != '' ? $searchName : '';
         $data['page_title']  = PROJECT_NAME . ' | Manage User';
         $data['module_name'] = 'Manage User';
@@ -53,7 +54,7 @@ class User extends CI_Controller
             'verification_status' => "0",
         );
         $edit_record = $this->master_model->updateRecord(USERS_TABLE, $set, $where);
-        return base_url() . 'front/doctor/reset/' . $set['confirmation_code'];
+        return base_url() . 'front/user/reset/' . $set['confirmation_code'];
     }
 
     public function add($value = '')
@@ -85,8 +86,8 @@ class User extends CI_Controller
                 $array_data['user_city_id']        = $this->input->post('city');
                 $array_data['user_pincode']        = $this->input->post('pin_code');
                 $array_data['verification_status'] = '0';
-                $array_data['user_status']         = '1';
-                $array_data['type']                = 'doctor';
+                $array_data['active']         = '1';
+                $array_data['type']                = 'user';
 
                 ///////////inserting records/////////////
                 if ($userId = $this->master_model->insertRecord(USERS_TABLE, $array_data, true)) {
@@ -99,11 +100,11 @@ class User extends CI_Controller
 
                     $this->load->library('email_template');
                     $result = $this->email_template->activation_email($email_data);
-                    $this->session->set_flashdata('success', 'New Doctor Added Successfully!!');
-                    redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                    $this->session->set_flashdata('success', 'New user Added Successfully!!');
+                    redirect(base_url() . ADMIN_CTRL . '/user');
                 } else {
-                    $this->session->set_flashdata('error', ' Error While adding New User.');
-                    redirect(base_url() . ADMIN_CTRL . '/doctor/add');
+                    $this->session->set_flashdata('danger', ' Error While adding New User.');
+                    redirect(base_url() . ADMIN_CTRL . '/user/add');
                 }
             }
         }
@@ -120,7 +121,7 @@ class User extends CI_Controller
             $id_edit = $id;
             $id      = base64_decode($id);
 
-            if (isset($_POST['doctor_edit'])) {
+            if (isset($_POST['user_edit'])) {
 
                 $this->form_validation->set_rules('first_name', 'First Name', 'required');
                 $this->form_validation->set_rules('last_name', 'Last Name', 'required');
@@ -141,10 +142,10 @@ class User extends CI_Controller
                     $edit_record                    = $this->master_model->updateRecord(USERS_TABLE, $array_data, array("id" => $id));
                     if ($edit_record == true) {
                         $this->session->set_flashdata('success', ' Profile Updated Successfully!');
-                        redirect(base_url() . ADMIN_CTRL . '/doctor/edit/' . $id_edit);
+                        redirect(base_url() . ADMIN_CTRL . '/user/edit/' . $id_edit);
                     } else {
-                        $this->session->set_flashdata('error', ' Error while editing profile.');
-                        redirect(base_url() . ADMIN_CTRL . '/doctor/edit/' . $id_edit);
+                        $this->session->set_flashdata('danger', ' Error while editing profile.');
+                        redirect(base_url() . ADMIN_CTRL . '/user/edit/' . $id_edit);
                     }
                 }
             }
@@ -152,9 +153,9 @@ class User extends CI_Controller
             $data['state_data']     = $this->master_model->getRecords(STATES_TABLE, '', '', array('state_name' => 'ASC'));
             $array_city['state_id'] = $data['record'][0]['user_state_id'];
             $data['city_data']      = $this->master_model->getRecords(CITIES_TABLE, $array_city, '', array('city_name' => 'ASC'));
-            $data['page_title']     = PROJECT_NAME . ' | Doctor Edit';
-            $data['page_name']      = 'Doctor Edit';
-            $data['content']        = ADMIN_CTRL . '/doctor/doctor_edit';
+            $data['page_title']     = PROJECT_NAME . ' | user Edit';
+            $data['page_name']      = 'user Edit';
+            $data['content']        = ADMIN_CTRL . '/user/user_edit';
             $this->load->view(ADMIN_VIEW . '/template', $data);
         }
     }
@@ -204,25 +205,47 @@ class User extends CI_Controller
         return $resp;
     }
 
+    public function verify($id)
+    {
+        if (isset($id) != '') {
+            $id         = base64_decode($id);
+            $array_data = array("user_verification" => '1');
+            $array_cond = array("id" => $id);
+            $verify      = $this->master_model->updateRecord(USERS_TABLE, $array_data, $array_cond);
+
+            $data['error'] = '';
+            if ($verify == true) {
+                $this->session->set_flashdata('success', 'User Verification Successful');
+                redirect(base_url() . ADMIN_CTRL . '/user');
+            } else {
+                $this->session->set_flashdata('danger', 'Error while Verify Record');
+                redirect(base_url() . ADMIN_CTRL . '/user');
+            }
+
+        } else {
+            redirect(base_url() . ADMIN_CTRL . '/user');
+        }
+    }
+
     public function unblock($id)
     {
         if (isset($id) != '') {
             $id         = base64_decode($id);
-            $array_data = array("user_status" => '1');
+            $array_data = array("active" => '1');
             $array_cond = array("id" => $id);
             $block      = $this->master_model->updateRecord(USERS_TABLE, $array_data, $array_cond);
 
             $data['error'] = '';
             if ($block == true) {
-                $this->session->set_flashdata('success', 'Doctor Unblock Successfully');
-                redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                $this->session->set_flashdata('success', 'User Unblock Successfully');
+                redirect(base_url() . ADMIN_CTRL . '/user');
             } else {
-                $this->session->set_flashdata('error', 'Error while Unblocking record');
-                redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                $this->session->set_flashdata('danger', 'Error while Unblocking record');
+                redirect(base_url() . ADMIN_CTRL . '/user');
             }
 
         } else {
-            redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+            redirect(base_url() . ADMIN_CTRL . '/user');
         }
     }
 
@@ -230,19 +253,19 @@ class User extends CI_Controller
     {
         if (isset($id) != '') {
             $id            = base64_decode($id);
-            $array_data    = array("user_status" => '1');
+            $array_data    = array("active" => '1');
             $array_cond    = array("id" => $id);
             $block         = $this->master_model->updateRecord(USERS_TABLE, $array_data, $array_cond);
             $data['error'] = '';
             if ($block == true) {
-                $this->session->set_flashdata('success', 'Doctor Unblock Successfully');
+                $this->session->set_flashdata('success', 'User Unblock Successfully');
             } else {
-                $this->session->set_flashdata('error', 'Error while Unblocking record');
+                $this->session->set_flashdata('danger', 'Error while Unblocking record');
             }
-            redirect(base_url() . ADMIN_CTRL . '/doctor/blocked_doctors');
+            redirect(base_url() . ADMIN_CTRL . '/user/blocked_users');
 
         } else {
-            redirect(base_url() . ADMIN_CTRL . '/doctor/blocked_doctors');
+            redirect(base_url() . ADMIN_CTRL . '/user/blocked_users');
         }
     }
 
@@ -250,19 +273,19 @@ class User extends CI_Controller
     {
         if (isset($id) != '') {
             $id            = base64_decode($id);
-            $array_data    = array("user_status" => '0');
+            $array_data    = array("active" => '0');
             $array_cond    = array("id" => $id);
             $block         = $this->master_model->updateRecord(USERS_TABLE, $array_data, $array_cond);
             $data['error'] = '';
             if ($block == true) {
-                $this->session->set_flashdata('success', 'Doctor Block Successfully');
-                redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                $this->session->set_flashdata('success', 'User Block Successfully');
+                redirect(base_url() . ADMIN_CTRL . '/user');
             } else {
-                $this->session->set_flashdata('error', 'Error while blocking record');
-                redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                $this->session->set_flashdata('danger', 'Error while blocking record');
+                redirect(base_url() . ADMIN_CTRL . '/user');
             }
         } else {
-            redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+            redirect(base_url() . ADMIN_CTRL . '/user');
         }
     }
 
@@ -270,35 +293,35 @@ class User extends CI_Controller
     {
         if ($_POST['action'] == 'delete') {
             foreach ($_POST['chk'] as $key) {
-                $delete = $this->master_model->updateRecord(USERS_TABLE, array('soft_delete' => '1'), array("id" => $key));
+                $delete = $this->master_model->deleteRecord(USERS_TABLE, array("id" => $key));
             }
             if ($delete == true) {
-                $this->session->set_flashdata('success', ' Selected Doctor Deleted Successfully');
-                redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                $this->session->set_flashdata('success', ' Selected User Deleted Successfully');
+                redirect(base_url() . ADMIN_CTRL . '/user');
             } else {
-                $this->session->set_flashdata('error', 'Error While Deleting Selected Doctor. ');
-                redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+                $this->session->set_flashdata('danger', 'Error While Deleting Selected user. ');
+                redirect(base_url() . ADMIN_CTRL . '/user');
             }
         }
         if ($_POST['action'] == 'block') {
             foreach ($_POST['chk'] as $key) {
                 $id        = $key;
-                $data      = array("user_status" => '0');
+                $data      = array("active" => '0');
                 $condition = array("id" => $id);
                 $block     = $this->master_model->updateRecord(USERS_TABLE, $data, $condition);
             }
-            $this->session->set_flashdata('success', ' Selected Doctor Blocked Successfully');
-            redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+            $this->session->set_flashdata('success', ' Selected user Blocked Successfully');
+            redirect(base_url() . ADMIN_CTRL . '/user');
         }
         if ($_POST['action'] == 'unblock') {
             foreach ($_POST['chk'] as $key) {
                 $id        = $key;
-                $data      = array("user_status" => '1');
+                $data      = array("active" => '1');
                 $condition = array("id" => $id);
                 $block     = $this->master_model->updateRecord(USERS_TABLE, $data, $condition);
             }
-            $this->session->set_flashdata('success', ' Selected Doctor Unblocked Successfully');
-            redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+            $this->session->set_flashdata('success', ' Selected user Unblocked Successfully');
+            redirect(base_url() . ADMIN_CTRL . '/user');
         }
     }
 
@@ -306,20 +329,20 @@ class User extends CI_Controller
     {
         if (isset($id) != '') {
             $id            = base64_decode($id);
-            $delete        = $this->master_model->updateRecord(USERS_TABLE, array('soft_delete' => '1'), array("id" => $id));
+            $delete        = $this->master_model->deleteRecord(USERS_TABLE, array("id" => $id));
             $data['error'] = '';
             if ($delete == true) {
-                $this->session->set_flashdata('del_success', 'Record Deleted Successfully');
+                $this->session->set_flashdata('success', 'Record Deleted Successfully');
             } else {
-                $this->session->set_flashdata('error', 'Error while deleteing record');
+                $this->session->set_flashdata('danger', 'Error while deleteing record');
             }
-            redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+            redirect(base_url() . ADMIN_CTRL . '/user');
         } else {
-            redirect(base_url() . ADMIN_CTRL . '/doctor/manage');
+            redirect(base_url() . ADMIN_CTRL . '/user');
         }
     }
 
-    public function blocked_doctors()
+    public function blocked_users()
     {
         $perpage      = isset($_POST['per_page']) ? $_POST['per_page'] : 10;
         $data['page'] = (isset($_GET['page'])) ? $perpage * (($_GET['page']) - 1) : 0;
@@ -327,26 +350,26 @@ class User extends CI_Controller
 
         if (isset($searchName) && $searchName != '') {
 
-            $sqlQry          = 'SELECT * FROM ' . USERS_TABLE . ' WHERE first_name like "%' . $searchName . '%" AND user_status="0" AND type="doctor" AND soft_delete= "0"';
+            $sqlQry          = 'SELECT * FROM ' . USERS_TABLE . ' WHERE first_name like "%' . $searchName . '%" AND active="0" AND type="user" AND soft_delete= "0"';
             $data['blocked'] = $this->db->query($sqlQry)->num_rows();
         } else {
-            $sqlQry          = "SELECT * FROM " . USERS_TABLE . " WHERE type='doctor' AND user_status='0' AND soft_delete='0'";
-            $data['blocked'] = $this->master_model->getRecordCount(USERS_TABLE, array('user_status' => '0', 'type' => 'doctor', 'soft_delete' => '0'));
+            $sqlQry          = "SELECT * FROM " . USERS_TABLE . " WHERE type='user' AND active='0' AND soft_delete='0'";
+            $data['blocked'] = $this->master_model->getRecordCount(USERS_TABLE, array('active' => '0', 'type' => 'user', 'soft_delete' => '0'));
         }
 
         $dataCnt                           = $this->db->query($sqlQry);
-        $data['total']                     = $this->master_model->getRecordCount(USERS_TABLE, array('type' => 'doctor', 'soft_delete' => '0'));
+        $data['total']                     = $this->master_model->getRecordCount(USERS_TABLE, array('type' => 'user', 'soft_delete' => '0'));
         $pageNum                           = $this->input->get('page');
-        $pageURL                           = base_url() . ADMIN_CTRL . '/doctor/blocked_doctors?search_name=' . $searchName;
+        $pageURL                           = base_url() . ADMIN_CTRL . '/user/blocked_users?search_name=' . $searchName;
         $_pageRes                          = $this->commonPagination($pageNum, $pageURL, count($dataCnt->result_array()), 4, $perpage);
         $data['pagination']                = $_pageRes['page_links'];
         $sqlQuery                          = $sqlQry . ' LIMIT ' . $_pageRes['offset'] . ' ,' . $_pageRes['per_page'] . '';
         $dataSql                           = $this->db->query($sqlQuery);
         $data['user_registration_records'] = $dataSql->result_array();
         $data['search_name']               = isset($searchName) && $searchName != '' ? $searchName : '';
-        $data['page_title']                = PROJECT_NAME . ' | Manage Doctor';
-        $data['module_name']               = 'Manage Doctor';
-        $data['content']                   = ADMIN_CTRL . '/doctor/blocked_doctors';
+        $data['page_title']                = PROJECT_NAME . ' | Manage user';
+        $data['module_name']               = 'Manage user';
+        $data['content']                   = ADMIN_CTRL . '/user/blocked_users';
         $this->load->view(ADMIN_VIEW . '/template', $data);
     }
 

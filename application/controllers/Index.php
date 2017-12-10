@@ -10,6 +10,8 @@ class Index extends CI_Controller {
 
 	public function index($value='')
 	{
+		// dd($_SESSION);
+
 		$data['do_donation']=$this->index_model->getCards('donation',array('status'=>1),'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',array('donation.datetime'=>'ASC'),false,8);
 		$data['reqst_donation']=$this->index_model->getCards('donation',array('status'=>0),'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',array('donation.datetime'=>'ASC'),false,4);
 		$data['angles_donar']=$this->index_model->getDonars('transaction',false,'users.first_name,users.last_name,users.pro_img,count(user_request.uid) as usr_cnt',array('usr_cnt'=>'DSC'),false,12);

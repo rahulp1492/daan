@@ -4,9 +4,9 @@
       <h5 class="indigo-text">Please, login into your account</h5>
       <div class="section">
       </div>
-      <?php $this->load->view('front/layout/alert') ?>
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <?php $this->load->view('front/layout/alert') ?>
 
           <form class="col s12" method="post" action="<?=base_url().'login-process'?>">
 <!--         <div class="row">

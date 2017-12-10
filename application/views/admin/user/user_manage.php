@@ -73,7 +73,6 @@
                         </div>
                       </div>
                     </div>&nbsp;&nbsp;
-
                     <div class="form-group">
                       <div class="col-sm-9 col-lg-4 col-sm-offset-3 controls">
                         <button type="submit" id="submit-btn" class="btn btn-primary col-sm-offset-3"> Search</button>
@@ -81,13 +80,12 @@
                     </div>
                   </form>
                   <span id="search_error" class="col-sm-offset-1" style="color: red"></span>
-                  <form name="frm_make_view" id="frm_make_view" method="post" action="<?php echo base_url() . ADMIN_CTRL; ?>/doctor/multi_action">
+                  <form name="frm_make_view" id="frm_make_view" method="post" action="<?php echo base_url() . ADMIN_CTRL; ?>/user/multi_action">
                     <?php $csrf = array(
                       'name' => $this->security->get_csrf_token_name(),
                       'hash' => $this->security->get_csrf_hash());?>
 
-                      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
-
+                      <input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>"/>
                       <input type="hidden" name="action" value="" id="action">
                       <table class="table table-advance">
                         <thead>
@@ -105,9 +103,7 @@
                           </tr>
                         </thead>
                         <tbody>
-
                           <?php
-
                           if (count($arr_user) > 0) {
                             $i = 1;
 
@@ -121,26 +117,36 @@
                                 <th><?php echo $user['email']; ?></th>
                                 <td>
                                   <?php
-
                                   if ($user['active'] != 1) {
                                     ?>
                                     <a class="btn btn-circle show-tooltip" style="color:red;" title="Deactive" href="#"><i class="fa fa-circle" style="color:red;"></i></a>
-
                                     <?php
-
                                   } else {
-
                                     ?>
                                     <a class="btn btn-circle show-tooltip" style="color:green;"  title="Active" href="#"><i class="fa fa-circle" style="color:green;"></i></a>
-
                                     <?php
                                   }
                                   ?>
                                 </td>
                                 <td class="visible-md visible-lg">
                                   <div class="btn-group">
-                                    <a class="btn btn-sm show-tooltip" title="" href="<?php echo base_url('/admin/doctor/edit/') . base64_encode($user['id']); ?>" data-original-title="Edit"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-sm btn-danger show-tooltip" onclick="return confirm('Are you sure you want to Delete this Doctor ?')" title="" href="<?php echo base_url('/admin/doctor/delete/') . base64_encode($user['id']); ?>" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
+
+                                  <?php if ($user['user_verification'] == '1') { //Verified user it is. ?>
+                                    
+                                    <a class="btn btn-sm btn-success show-tooltip" title="" data-original-title="Verified"><i class="fa fa-check"></i></a>
+                                  
+                                  <?php }elseif ($user['user_verification'] == '2') { //Verification request ?>
+
+                                    <a class="btn btn-sm show-tooltip" title="" href="<?php echo base_url(ADMIN_CTRL . '/user/verify/') . base64_encode($user['id']); ?>" data-original-title="Verification Request"><i class="fa fa-check-square-o"></i></a>
+                                  
+                                  <?php }else{  //not verified user ?>
+
+                                    <a class="btn btn-sm btn-danger show-tooltip" data-original-title="Not Verified"><i class="fa fa-times"></i></a>
+                                  
+                                  <?php } ?>
+
+                                    <a class="btn btn-sm show-tooltip" title="" href="#" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-sm btn-danger show-tooltip" onclick="return confirm('Are you sure you want to Delete this Doctor ?')" title="" href="<?php echo base_url(ADMIN_CTRL . '/user/delete/') . base64_encode($user['id']); ?>" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
                                   </div>
                                 </td>
                               </tr>

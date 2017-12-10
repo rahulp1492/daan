@@ -14,6 +14,17 @@ class Authentication extends CI_Controller
         $this->lang->load('auth');
     }
 
+    // log the user out
+    public function logout()
+    {
+        // log the user out
+        $logout = $this->ion_auth->logout();
+
+        // redirect them to the login page
+        $this->session->set_flashdata('success', $this->ion_auth->messages());
+        redirect('login', 'refresh');
+    }
+
     public function session($provider_name)
     {
 
