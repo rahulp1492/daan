@@ -65,7 +65,7 @@ if (isset($meta)) {
 	<div class="navbar-fixed">
 		<nav class="blue darken-1 white-text" role="navigation">
 			<div class="nav-wrapper container">
-				<a id="logo-container" href="index.php" class="brand-logo white-text"><b>Swa</b><span style="font-family:'Samarkan Normal';">Daan</span></a>
+				<a id="logo-container" href="<?=base_url()?>" class="brand-logo white-text"><b>Swa</b><span style="font-family:'Samarkan Normal';">Daan</span></a>
 
 				<ul class="right hide-on-med-and-down">
 					<li><a href="<?=base_url()?>" class="white-text w3-bar-item w3-button w3-hide-small">Home</a></li>
@@ -82,6 +82,16 @@ if (isset($meta)) {
 						</a>
 					</li>
 					<li>
+						<a href="<?=base_url('user/my_request')?>" class="blue-text w3-bar-item w3-button w3-hide-small white"><i class="material-icons left"></i>
+						My Requests
+						</a>
+					</li>
+					<li>
+						<a href="<?=base_url('user/timeline')?>" class="blue-text w3-bar-item w3-button w3-hide-small white"><i class="material-icons left"></i>
+						Donation Timeline
+						</a>
+					</li>
+					<li>
 						<a href="<?=base_url('user/logout')?>" class="blue-text w3-bar-item w3-button w3-hide-small white"><i class="material-icons left"></i>
 						Logout
 						</a>
@@ -94,19 +104,25 @@ if (isset($meta)) {
 					<?php }?>
 				</ul>
 				<ul id="nav-mobile" class="side-nav blue darken-2 white-text">
-
 					<li><a href="<?=base_url()?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">home</i>Home</a></li>
 
-					<li><a href="#profile" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons mdi-action-search left">account_circle</i> Profile</a></li>
+					<?php if (!empty($this->session->userdata('identity')) && !empty($this->session->userdata('user_id'))) {?>
 
-					<li><a href="#" class="white-text w3-bar-item w3-button w3-hide-sma><i class="material-icons left">timeline</i>Timeline</a></li>
+					<li><a href="<?=base_url('user/profile')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons mdi-action-search left">account_circle</i> Profile</a></li>
 
-					<li><a href="#my_request" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">line_weight</i>Donation Requests</a></li>
+					<li><a href="<?=base_url('user/timeline')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">event</i> Donation Timeline</a></li>
 
-					<li><a href="#logout" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-out" aria-hidden="true"></i> logout</a></li>
-					<li><a href="<?=base_url('login')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+					<li><a href="<?=base_url('user/my_request')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">line_weight</i>My Requests</a></li>
 
-					<li><a href="#signup" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">person_add</i>Signup</a></li>
+					<li><a href="#logout" class="white-text w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i> logout</a></li>
+
+					<?php }else{ ?>
+
+					<li><a href="<?=base_url('login')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">exit_to_app</i>Login</a></li>
+
+					<li><a href="<?=base_url('login')?>" class="white-text w3-bar-item w3-button w3-hide-small"><i class="material-icons left">person_add</i>Signup</a></li>
+
+					<?php } ?>
 				</ul>
 
 				<a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>

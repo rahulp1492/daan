@@ -12,9 +12,18 @@ class Index extends CI_Controller {
 	{
 		// dd($_SESSION);
 
-		$data['do_donation']=$this->index_model->getCards('donation',array('status'=>1),'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',array('donation.datetime'=>'ASC'),false,8);
-		$data['reqst_donation']=$this->index_model->getCards('donation',array('status'=>0),'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',array('donation.datetime'=>'ASC'),false,4);
+		$data['do_donation']=$this->index_model->getCards('donation',array('status'=>1),'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
+			array('donation.created_at'=>'ASC'),
+			false,
+			8);
+
+		$data['reqst_donation']=$this->index_model->getCards('donation',array('status'=>0),'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
+			array('donation.created_at'=>'ASC'),
+			false,
+			4);
+
 		$data['angles_donar']=$this->index_model->getDonars('transaction',false,'users.first_name,users.last_name,users.pro_img,count(user_request.uid) as usr_cnt',array('usr_cnt'=>'DSC'),false,12);
+
 		$data['page_name'] = "Home";		
 		$data['content']   = 'front/index';
 		$this->load->view('front/layout/template',$data);
@@ -22,9 +31,9 @@ class Index extends CI_Controller {
 
 	public function donate_description($slug){
 		$data = $this->session->flashdata('data');
-		$data['desc_card']=$this->index_model->getDescCard('donation',array('slug' =>$slug),'*,donation_type.name as donation_name,donation.datetime as donation_date,donation.name as donation_title, donation.message as donation_message');
+		$data['desc_card']=$this->index_model->getDescCard('donation',array('slug' =>$slug),'*,donation_type.name as donation_name,donation.created_at as donation_date,donation.name as donation_title, donation.message as donation_message');
 		$data['angles_donar']=$this->index_model->getDonars('transaction',false,'users.first_name,users.last_name,users.pro_img,count(user_request.uid) as usr_cnt',array('usr_cnt'=>'DSC'),false,12);
-		$data['req_list']=$this->index_model->getReqList('user_request',array('slug' =>$slug),'user_request.id as users_request_id,donation.slug,user_request.datetime,user_request.message,users.first_name,users.last_name,users.pro_img',false,false,20);
+		$data['req_list']=$this->index_model->getReqList('user_request',array('slug' =>$slug),'user_request.id as users_request_id,donation.slug,user_request.created_at,user_request.message,users.first_name,users.last_name,users.pro_img',false,false,20);
 		//print_r($data);
 		$data['page_name'] = "Donation Descrition";		
 		$data['content']   = 'front/donation_desc';

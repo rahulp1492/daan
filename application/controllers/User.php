@@ -7,11 +7,75 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->library(array('ion_auth'));
-
+        $this->load->model('index_model');
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
     }
 
-    //Profile update for user
+    /**
+     * My donation timeline
+     */
+    public function timeline($value = '')
+    {
+        if (!empty($this->session->userdata('user_id')) && $this->session->userdata('user_id') != '') {
+
+            $id = $this->session->userdata('user_id');
+            $user_profile = $this->master_model->getRecords(USERS_TABLE, array('id' => $id), FALSE, FALSE, FALSE, 1);
+            $data['user_profile'] = !empty($user_profile[0])? $user_profile[0]:array();
+// dd($data);
+            $data['arr_donations'] = $this->index_model->getCards(DONATION_TABLE,
+                array(
+                    DONATION_TABLE . ".completed_uid" => $id,
+                    DONATION_TABLE . ".status"        => 1,
+                    DONATION_TABLE . ".active"        => '1',
+                    // DONATION_TABLE . ".complete" => '1',
+                ),
+                'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
+                array('donation.created_at' => 'ASC'),
+                false,
+                8);
+// dd($data);
+            $data['page_title'] = PROJECT_NAME . ' | My Donation Requests';
+            $data['page_name']  = 'Profile Edit';
+            $data['content']    = 'front/user/timeline';
+            $this->load->view('front/layout/template', $data);
+        } else {
+            redirect('/');
+        }
+    }
+
+    /**
+     * My donation requests list
+     */
+    public function my_request($value = '')
+    {
+        if (!empty($this->session->userdata('user_id')) && $this->session->userdata('user_id') != '') {
+
+            $id = $this->session->userdata('user_id');
+
+            $data['arr_requests'] = $this->index_model->getCards(DONATION_TABLE,
+                array(
+                    DONATION_TABLE . ".uid"      => $id,
+                    DONATION_TABLE . ".status"   => 1,
+                    DONATION_TABLE . ".activate" => '1',
+                    DONATION_TABLE . ".active"   => '1',
+                ),
+                'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
+                array('donation.created_at' => 'ASC'),
+                false,
+                8);
+// dd($data);
+            $data['page_title'] = PROJECT_NAME . ' | My Donation Requests';
+            $data['page_name']  = 'My Donation Requests';
+            $data['content']    = 'front/user/my_request';
+            $this->load->view('front/layout/template', $data);
+        } else {
+            redirect('/');
+        }
+    }
+
+    /**
+     * User Profile update
+     */
     public function profile($value = '')
     {
         if (!empty($this->session->userdata('user_id')) && $this->session->userdata('user_id') != '') {

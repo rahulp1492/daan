@@ -32,7 +32,7 @@
           <div class="box box-black">
             <div class="tabing-section-order">
               <ul>
-                <li><a class="acti" href="<?php echo base_url() . 'admin/user'; ?>">All Users(<?php echo $total ? $total : 0; ?>)</a>
+                <li><a class="acti" href="<?= base_url('admin/user'); ?>">All Users(<?php echo $total ? $total : 0; ?>)</a>
                 </li>
               </ul>
               <div class="clearfix"></div>
@@ -40,6 +40,7 @@
             <div class="box-content">
               <div class="btn-toolbar pull-right">
                 <div class="btn-group">
+                  <a class="btn btn-circle show-tooltip" title="" href="<?=base_url('admin/user/add')?>" data-original-title="Add User"><i class="fa fa-plus"></i></a>
                   <a class="btn btn-circle show-tooltip" title="" href="#" data-original-title="Block selected"><i class="fa fa-lock" onclick="javascript:blockselect();"></i></a>
                   <a class="btn btn-circle show-tooltip" title="" href="#" data-original-title="Unblock selected"><i class="fa fa-unlock" onclick="javascript:unblockselect();"></i></a>
                   <a class="btn btn-circle show-tooltip" title="" href="#" data-original-title="Delete selected" onclick="javascript:delselect();"><i class="fa fa-trash-o"></i></a>
@@ -145,7 +146,7 @@
                                   
                                   <?php } ?>
 
-                                    <a class="btn btn-sm show-tooltip" title="" href="#" data-original-title="Edit"><i class="fa fa-edit"></i></a>
+                                    <a class="btn btn-sm show-tooltip" title="" href="<?php echo base_url(ADMIN_CTRL . '/user/edit/') . base64_encode($user['id']); ?>" data-original-title="Edit"><i class="fa fa-edit"></i></a>
                                     <a class="btn btn-sm btn-danger show-tooltip" onclick="return confirm('Are you sure you want to Delete this Doctor ?')" title="" href="<?php echo base_url(ADMIN_CTRL . '/user/delete/') . base64_encode($user['id']); ?>" data-original-title="Delete"><i class="fa fa-trash-o"></i></a>
                                   </div>
                                 </td>

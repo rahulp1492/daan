@@ -1,13 +1,8 @@
-/*!
-
- * Materialize v0.100.2 (http://materializecss.com)
-
- * Copyright 2014-2017 Materialize
-
- * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
-
- */
-
+/*!
+ * Materialize v0.100.2 (http://materializecss.com)
+ * Copyright 2014-2017 Materialize
+ * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ */
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -2145,14 +2140,10 @@
 }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-/**
-
- * 1. Set default font family to sans-serif.
-
- * 2. Prevent iOS and IE text size adjust after device orientation change,
-
- *    without disabling user zoom.
-
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
  */
 html {
   font-family: sans-serif;
@@ -2163,28 +2154,20 @@ html {
   /* 2 */
 }
 
-/**
-
- * Remove default margin.
-
+/**
+ * Remove default margin.
  */
 body {
   margin: 0;
 }
 
-/* HTML5 display definitions
-
+/* HTML5 display definitions
    ========================================================================== */
-/**
-
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
-
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
-
- * and Firefox.
-
- * Correct `block` display not defined for `main` in IE 11.
-
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
  */
 article,
 aside,
@@ -2202,12 +2185,9 @@ summary {
   display: block;
 }
 
-/**
-
- * 1. Correct `inline-block` display not defined in IE 8/9.
-
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
-
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
 audio,
 canvas,
@@ -2219,120 +2199,92 @@ video {
   /* 2 */
 }
 
-/**
-
- * Prevent modern browsers from displaying `audio` without controls.
-
- * Remove excess height in iOS 5 devices.
-
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
  */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-/**
-
- * Address `[hidden]` styling not present in IE 8/9/10.
-
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
-
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
  */
 [hidden],
 template {
   display: none;
 }
 
-/* Links
-
+/* Links
    ========================================================================== */
-/**
-
- * Remove the gray background color from active links in IE 10.
-
+/**
+ * Remove the gray background color from active links in IE 10.
  */
 a {
   background-color: transparent;
 }
 
-/**
-
- * Improve readability of focused elements when they are also in an
-
- * active/hover state.
-
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
  */
 a:active,
 a:hover {
   outline: 0;
 }
 
-/* Text-level semantics
-
+/* Text-level semantics
    ========================================================================== */
-/**
-
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
-
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/**
-
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
-
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
 b,
 strong {
   font-weight: bold;
 }
 
-/**
-
- * Address styling not present in Safari and Chrome.
-
+/**
+ * Address styling not present in Safari and Chrome.
  */
 dfn {
   font-style: italic;
 }
 
-/**
-
- * Address variable `h1` font-size and margin within `section` and `article`
-
- * contexts in Firefox 4+, Safari, and Chrome.
-
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
  */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/**
-
- * Address styling not present in IE 8/9.
-
+/**
+ * Address styling not present in IE 8/9.
  */
 mark {
   background: #ff0;
   color: #000;
 }
 
-/**
-
- * Address inconsistent and variable font size in all browsers.
-
+/**
+ * Address inconsistent and variable font size in all browsers.
  */
 small {
   font-size: 80%;
 }
 
-/**
-
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
-
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 sub,
 sup {
@@ -2350,43 +2302,33 @@ sub {
   bottom: -0.25em;
 }
 
-/* Embedded content
-
+/* Embedded content
    ========================================================================== */
-/**
-
- * Remove border when inside `a` element in IE 8/9/10.
-
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
  */
 img {
   border: 0;
 }
 
-/**
-
- * Correct overflow not hidden in IE 9/10/11.
-
+/**
+ * Correct overflow not hidden in IE 9/10/11.
  */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* Grouping content
-
+/* Grouping content
    ========================================================================== */
-/**
-
- * Address margin not present in IE 8/9 and Safari.
-
+/**
+ * Address margin not present in IE 8/9 and Safari.
  */
 figure {
   margin: 1em 40px;
 }
 
-/**
-
- * Address differences between Firefox and other browsers.
-
+/**
+ * Address differences between Firefox and other browsers.
  */
 hr {
   -webkit-box-sizing: content-box;
@@ -2394,19 +2336,15 @@ hr {
   height: 0;
 }
 
-/**
-
- * Contain overflow in all browsers.
-
+/**
+ * Contain overflow in all browsers.
  */
 pre {
   overflow: auto;
 }
 
-/**
-
- * Address odd `em`-unit font size rendering in all browsers.
-
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
  */
 code,
 kbd,
@@ -2416,26 +2354,17 @@ samp {
   font-size: 1em;
 }
 
-/* Forms
-
+/* Forms
    ========================================================================== */
-/**
-
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
-
- * styling of `select`, unless a `border` property is set.
-
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
  */
-/**
-
- * 1. Correct color not being inherited.
-
- *    Known issue: affects color of disabled elements.
-
- * 2. Correct font properties not being inherited.
-
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
-
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
 button,
 input,
@@ -2450,43 +2379,30 @@ textarea {
   /* 3 */
 }
 
-/**
-
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
-
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
 button {
   overflow: visible;
 }
 
-/**
-
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
-
- * All other form control elements do not inherit `text-transform` values.
-
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
-
- * Correct `select` style inheritance in Firefox.
-
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
  */
 button,
 select {
   text-transform: none;
 }
 
-/**
-
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
-
- *    and `video` controls.
-
- * 2. Correct inability to style clickable `input` types in iOS.
-
- * 3. Improve usability and consistency of cursor style between image-type
-
- *    `input` and others.
-
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
  */
 button,
 html input[type="button"],
@@ -2498,20 +2414,16 @@ input[type="submit"] {
   /* 3 */
 }
 
-/**
-
- * Re-set default cursor for disabled elements.
-
+/**
+ * Re-set default cursor for disabled elements.
  */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
 
-/**
-
- * Remove inner padding and border in Firefox 4+.
-
+/**
+ * Remove inner padding and border in Firefox 4+.
  */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -2519,29 +2431,20 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-/**
-
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
-
- * the UA stylesheet.
-
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
  */
 input {
   line-height: normal;
 }
 
-/**
-
- * It's recommended that you don't attempt to style these elements.
-
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
-
- *
-
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
-
- * 2. Remove excess padding in IE 8/9/10.
-
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
  */
 input[type="checkbox"],
 input[type="radio"] {
@@ -2552,26 +2455,19 @@ input[type="radio"] {
   /* 2 */
 }
 
-/**
-
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
-
- * `font-size` values of the `input`, it causes the cursor style of the
-
- * decrement button to change from `default` to `text`.
-
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
  */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
-
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
-
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
-
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
 input[type="search"] {
   -webkit-appearance: textfield;
@@ -2581,24 +2477,18 @@ input[type="search"] {
   /* 2 */
 }
 
-/**
-
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
-
- * Safari (but not Chrome) clips the cancel button when the search input has
-
- * padding (and `textfield` appearance).
-
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
  */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
-
- * Define consistent border, margin, and padding.
-
+/**
+ * Define consistent border, margin, and padding.
  */
 fieldset {
   border: 1px solid #c0c0c0;
@@ -2606,12 +2496,9 @@ fieldset {
   padding: 0.35em 0.625em 0.75em;
 }
 
-/**
-
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
-
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
-
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
 legend {
   border: 0;
@@ -2620,33 +2507,25 @@ legend {
   /* 2 */
 }
 
-/**
-
- * Remove default vertical scrollbar in IE 8/9/10/11.
-
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
  */
 textarea {
   overflow: auto;
 }
 
-/**
-
- * Don't inherit the `font-weight` (applied by a rule above).
-
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
-
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
 optgroup {
   font-weight: bold;
 }
 
-/* Tables
-
+/* Tables
    ========================================================================== */
-/**
-
- * Remove most spacing between table cells.
-
+/**
+ * Remove most spacing between table cells.
  */
 table {
   border-collapse: collapse;
@@ -2916,10 +2795,8 @@ video.responsive-video {
   position: fixed !important;
 }
 
-/*********************
-
-  Transition Classes
-
+/*********************
+  Transition Classes
 **********************/
 ul.staggered-list li {
   opacity: 0;
@@ -2931,10 +2808,8 @@ ul.staggered-list li {
           transform-origin: 0 50%;
 }
 
-/*********************
-
-  Media Query Classes
-
+/*********************
+  Media Query Classes
 **********************/
 @media only screen and (max-width: 600px) {
   .hide-on-small-only, .hide-on-small-and-down {
@@ -3375,10 +3250,8 @@ td, th {
   }
 }
 
-/*******************
-
-  Utility Classes
-
+/*******************
+  Utility Classes
 *******************/
 .hide {
   display: none !important;
@@ -4843,7 +4716,7 @@ small {
 .card {
   position: relative;
   margin: 0.5rem 0 1rem 0;
-  background:transparent ;
+  background-color: #fff;
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
   transition: box-shadow .25s;
@@ -5127,7 +5000,7 @@ small {
   height: 48px;
   width: 100%;
   background-color: #fff;
-  margin: 0px auto;
+  margin: 0 auto;
   white-space: nowrap;
 }
 
@@ -5626,20 +5499,13 @@ button.btn-floating {
   height: 18px;
 }
 
-/*!
-
- * Waves v0.6.0
-
- * http://fian.my.id/Waves
-
- *
-
- * Copyright 2014 Alfiana E. Sibuea and other contributors
-
- * Released under the MIT license
-
- * https://github.com/fians/Waves/blob/master/LICENSE
-
+/*!
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
  */
 .waves-effect {
   position: relative;
@@ -6099,8 +5965,7 @@ label {
   color: #9e9e9e;
 }
 
-/* Text Inputs + Textarea
-
+/* Text Inputs + Textarea
    ========================================================================== */
 /* Style Placeholders */
 ::-webkit-input-placeholder {
@@ -6661,8 +6526,7 @@ textarea.materialize-textarea.validate + label:not(.label-icon).active {
   margin: 5px 15px;
 }
 
-/* Radio Buttons
-
+/* Radio Buttons
    ========================================================================== */
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
@@ -6785,8 +6649,7 @@ textarea.materialize-textarea.validate + label:not(.label-icon).active {
   border-color: #949494;
 }
 
-/* Checkboxes
-
+/* Checkboxes
    ========================================================================== */
 /* CUSTOM CSS CHECKBOXES */
 form p {
@@ -6997,8 +6860,7 @@ form p:last-child {
   border-color: #949494;
 }
 
-/* Switch
-
+/* Switch
    ========================================================================== */
 .switch,
 .switch * {
@@ -7095,8 +6957,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::before {
   background-color: #949494;
 }
 
-/* Select Field
-
+/* Select Field
    ========================================================================== */
 select {
   display: none;
@@ -7252,8 +7113,7 @@ select:disabled {
   padding-left: 1rem;
 }
 
-/* File Input
-
+/* File Input
    ========================================================================== */
 .file-field {
   position: relative;
@@ -7297,8 +7157,7 @@ select:disabled {
   display: none;
 }
 
-/* Range
-
+/* Range
    ========================================================================== */
 .range-field {
   position: relative;
@@ -7451,10 +7310,8 @@ input[type=range]:focus::-ms-fill-upper {
   background: #ccc;
 }
 
-/***************
-
-    Nav List
-
+/***************
+    Nav List
 ***************/
 .table-of-contents.fixed {
   position: fixed;
@@ -7718,50 +7575,30 @@ input[type=range]:focus::-ms-fill-upper {
   will-change: opacity;
 }
 
-/*
-
-    @license
-
-    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-
-    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-
-    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-
-    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-
-    Code distributed by Google as part of the polymer project is also
-
-    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-
+/*
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 /**************************/
 /* STYLES FOR THE SPINNER */
 /**************************/
-/*
-
- * Constants:
-
- *      STROKEWIDTH = 3px
-
- *      ARCSIZE     = 270 degrees (amount of circle the arc takes up)
-
- *      ARCTIME     = 1333ms (time it takes to expand and contract arc)
-
- *      ARCSTARTROT = 216 degrees (how much the start location of the arc
-
- *                                should rotate each time, 216 gives us a
-
- *                                5 pointed star shape (it's 360/5 * 3).
-
- *                                For a 7 pointed star, we might do
-
- *                                360/7 * 3 = 154.286)
-
- *      CONTAINERWIDTH = 28px
-
- *      SHRINK_TIME = 400ms
-
+/*
+ * Constants:
+ *      STROKEWIDTH = 3px
+ *      ARCSIZE     = 270 degrees (amount of circle the arc takes up)
+ *      ARCTIME     = 1333ms (time it takes to expand and contract arc)
+ *      ARCSTARTROT = 216 degrees (how much the start location of the arc
+ *                                should rotate each time, 216 gives us a
+ *                                5 pointed star shape (it's 360/5 * 3).
+ *                                For a 7 pointed star, we might do
+ *                                360/7 * 3 = 154.286)
+ *      CONTAINERWIDTH = 28px
+ *      SHRINK_TIME = 400ms
  */
 .preloader-wrapper {
   display: inline-block;
@@ -7827,30 +7664,18 @@ input[type=range]:focus::-ms-fill-upper {
   border-color: #0f9d58;
 }
 
-/**
-
- * IMPORTANT NOTE ABOUT CSS ANIMATION PROPERTIES (keanulee):
-
- *
-
- * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesn't
-
- * guarantee that the animation will start _exactly_ after that value. So we avoid using
-
- * animation-delay and instead set custom keyframes for each color (as redundant as it
-
- * seems).
-
- *
-
- * We write out each animation in full (instead of separating animation-name,
-
- * animation-duration, etc.) because under the polyfill, Safari does not recognize those
-
- * specific properties properly, treats them as -webkit-animation, and overrides the
-
- * other animation rules. See https://github.com/Polymer/platform/issues/53.
-
+/**
+ * IMPORTANT NOTE ABOUT CSS ANIMATION PROPERTIES (keanulee):
+ *
+ * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesn't
+ * guarantee that the animation will start _exactly_ after that value. So we avoid using
+ * animation-delay and instead set custom keyframes for each color (as redundant as it
+ * seems).
+ *
+ * We write out each animation in full (instead of separating animation-name,
+ * animation-duration, etc.) because under the polyfill, Safari does not recognize those
+ * specific properties properly, treats them as -webkit-animation, and overrides the
+ * other animation rules. See https://github.com/Polymer/platform/issues/53.
  */
 .active .spinner-layer.spinner-blue {
   /* durations: 4 * ARCTIME */
@@ -8115,12 +7940,9 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**
-
- * Patch the gap that appear between the two adjacent div.circle-clipper while the
-
- * spinner is rotating (appears on Chrome 38, Safari 7.1, and IE 11).
-
+/**
+ * Patch the gap that appear between the two adjacent div.circle-clipper while the
+ * spinner is rotating (appears on Chrome 38, Safari 7.1, and IE 11).
  */
 .gap-patch {
   position: absolute;
@@ -8487,19 +8309,10 @@ input[type=range]:focus::-ms-fill-upper {
   visibility: visible;
   -webkit-animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
           animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
-  -webkit-transition: opacity .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s 1s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s 1s,
- -webkit-transform .3s;
+  -webkit-transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s 1s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s;
+  transition: opacity .3s, transform .3s, visibility 0s 1s, -webkit-transform .3s;
 }
 
 .tap-target {
@@ -8552,19 +8365,10 @@ input[type=range]:focus::-ms-fill-upper {
 
 .tap-target-wave::after {
   visibility: hidden;
-  -webkit-transition: opacity .3s,
- visibility 0s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- visibility 0s,
- -webkit-transform .3s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s;
-  transition: opacity .3s,
- transform .3s,
- visibility 0s,
- -webkit-transform .3s;
+  -webkit-transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, visibility 0s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s, visibility 0s;
+  transition: opacity .3s, transform .3s, visibility 0s, -webkit-transform .3s;
   z-index: -1;
 }
 
@@ -8648,15 +8452,11 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/* ==========================================================================
-
-   $BASE-PICKER
-
+/* ==========================================================================
+   $BASE-PICKER
    ========================================================================== */
-/**
-
- * Note: the root picker element should *NOT* be styled more than what's here.
-
+/**
+ * Note: the root picker element should *NOT* be styled more than what's here.
  */
 .picker {
   font-size: 16px;
@@ -8672,28 +8472,22 @@ input[type=range]:focus::-ms-fill-upper {
   outline: none;
 }
 
-/**
-
- * The picker input element.
-
+/**
+ * The picker input element.
  */
 .picker__input {
   cursor: default;
 }
 
-/**
-
- * When the picker is opened, the input element is "activated".
-
+/**
+ * When the picker is opened, the input element is "activated".
  */
 .picker__input.picker__input--active {
   border-color: #0089ec;
 }
 
-/**
-
- * The holder is the only "scrollable" top-level container element.
-
+/**
+ * The holder is the only "scrollable" top-level container element.
  */
 .picker__holder {
   width: 100%;
@@ -8701,22 +8495,15 @@ input[type=range]:focus::-ms-fill-upper {
   -webkit-overflow-scrolling: touch;
 }
 
-/*!
-
- * Default mobile-first, responsive styling for pickadate.js
-
- * Demo: http://amsul.github.io/pickadate.js
-
+/*!
+ * Default mobile-first, responsive styling for pickadate.js
+ * Demo: http://amsul.github.io/pickadate.js
  */
-/**
-
- * Note: the root picker element should *NOT* be styled more than what's here.
-
+/**
+ * Note: the root picker element should *NOT* be styled more than what's here.
  */
-/**
-
- * Make the holder and frame fullscreen.
-
+/**
+ * Make the holder and frame fullscreen.
  */
 .picker__holder,
 .picker__frame {
@@ -8726,10 +8513,8 @@ input[type=range]:focus::-ms-fill-upper {
   top: 100%;
 }
 
-/**
-
- * The holder should overlay the entire screen.
-
+/**
+ * The holder should overlay the entire screen.
  */
 .picker__holder {
   position: fixed;
@@ -8738,10 +8523,8 @@ input[type=range]:focus::-ms-fill-upper {
   -webkit-backface-visibility: hidden;
 }
 
-/**
-
- * The frame that bounds the box contents of the picker.
-
+/**
+ * The frame that bounds the box contents of the picker.
  */
 .picker__frame {
   position: absolute;
@@ -8772,10 +8555,8 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**
-
- * The wrapper sets the stage to vertically align the box contents.
-
+/**
+ * The wrapper sets the stage to vertically align the box contents.
  */
 .picker__wrap {
   display: table;
@@ -8789,10 +8570,8 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**
-
- * The box contains all the picker contents.
-
+/**
+ * The box contains all the picker contents.
  */
 .picker__box {
   background: #ffffff;
@@ -8812,10 +8591,8 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**
-
- * When the picker opens...
-
+/**
+ * When the picker opens...
  */
 .picker--opened .picker__holder {
   top: 0;
@@ -8842,15 +8619,11 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**
-
- * For `large` screens, transform into an inline picker.
-
+/**
+ * For `large` screens, transform into an inline picker.
  */
-/* ==========================================================================
-
-   CUSTOM MATERIALIZE STYLES
-
+/* ==========================================================================
+   CUSTOM MATERIALIZE STYLES
    ========================================================================== */
 .picker__input.picker__input--active {
   border-color: #E3F2FD;
@@ -8881,15 +8654,11 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/* ==========================================================================
-
-   $BASE-DATE-PICKER
-
+/* ==========================================================================
+   $BASE-DATE-PICKER
    ========================================================================== */
-/**
-
- * The picker box.
-
+/**
+ * The picker box.
  */
 .picker__box {
   padding: 0;
@@ -8897,10 +8666,8 @@ input[type=range]:focus::-ms-fill-upper {
   overflow: hidden;
 }
 
-/**
-
- * The header containing the month and year stuff.
-
+/**
+ * The header containing the month and year stuff.
  */
 .picker__header {
   text-align: center;
@@ -8908,10 +8675,8 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: .75em;
 }
 
-/**
-
- * The month and year labels.
-
+/**
+ * The month and year labels.
  */
 .picker__month,
 .picker__year {
@@ -8920,10 +8685,8 @@ input[type=range]:focus::-ms-fill-upper {
   margin-right: .25em;
 }
 
-/**
-
- * The month and year selectors.
-
+/**
+ * The month and year selectors.
  */
 .picker__select--month,
 .picker__select--year {
@@ -8950,10 +8713,8 @@ input[type=range]:focus::-ms-fill-upper {
   border-color: rgba(0, 0, 0, 0.05);
 }
 
-/**
-
- * The month navigation buttons.
-
+/**
+ * The month navigation buttons.
  */
 .picker__nav--prev,
 .picker__nav--next {
@@ -8986,10 +8747,8 @@ input[type=range]:focus::-ms-fill-upper {
   border-left-color: #f5f5f5;
 }
 
-/**
-
- * The calendar table of dates
-
+/**
+ * The calendar table of dates
  */
 .picker__table {
   text-align: center;
@@ -9011,10 +8770,8 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 0;
 }
 
-/**
-
- * The weekday labels
-
+/**
+ * The weekday labels
  */
 .picker__weekday {
   width: 14.285714286%;
@@ -9031,10 +8788,8 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-/**
-
- * The days on the calendar
-
+/**
+ * The days on the calendar
  */
 .picker__day--today {
   position: relative;
@@ -9096,10 +8851,8 @@ input[type=range]:focus::-ms-fill-upper {
   background: #bbbbbb;
 }
 
-/**
-
- * The footer containing the "today", "clear", and "close" buttons.
-
+/**
+ * The footer containing the "today", "clear", and "close" buttons.
  */
 .picker__footer {
   text-align: right;
@@ -9183,17 +8936,12 @@ input[type=range]:focus::-ms-fill-upper {
   border-top-color: #aaaaaa;
 }
 
-/* ==========================================================================
-
-   CUSTOM MATERIALIZE STYLES
-
+/* ==========================================================================
+   CUSTOM MATERIALIZE STYLES
    ========================================================================== */
-/*.picker__box {
-
-  border-radius: 2px;
-
-  overflow: hidden;
-
+/*.picker__box {
+  border-radius: 2px;
+  overflow: hidden;
 }*/
 .picker__date-display {
   text-align: left;
@@ -9252,10 +9000,8 @@ input[type=range]:focus::-ms-fill-upper {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/*.picker__box {
-
-  padding: 0;
-
+/*.picker__box {
+  padding: 0;
 }*/
 .picker__calendar-container {
   padding: 0 1rem;
@@ -9349,15 +9095,11 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   background-color: #a1ded8;
 }
 
-/* ==========================================================================
-
-   $BASE-TIME-PICKER
-
+/* ==========================================================================
+   $BASE-TIME-PICKER
    ========================================================================== */
-/**
-
- * The list of times.
-
+/**
+ * The list of times.
  */
 .picker__list {
   list-style: none;
@@ -9365,10 +9107,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   margin: 0;
 }
 
-/**
-
- * The times on the clock.
-
+/**
+ * The times on the clock.
  */
 .picker__list-item {
   border-bottom: 1px solid #ddd;
@@ -9428,10 +9168,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   z-index: auto;
 }
 
-/**
-
- * The clear button
-
+/**
+ * The clear button
  */
 .picker--time .picker__button--clear {
   display: block;
@@ -9470,25 +9208,19 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   color: #fff;
 }
 
-/* ==========================================================================
-
-   $DEFAULT-TIME-PICKER
-
+/* ==========================================================================
+   $DEFAULT-TIME-PICKER
    ========================================================================== */
-/**
-
- * The frame the bounds the time picker.
-
+/**
+ * The frame the bounds the time picker.
  */
 .picker--time .picker__frame {
   min-width: 256px;
   max-width: 320px;
 }
 
-/**
-
- * The picker box.
-
+/**
+ * The picker box.
  */
 .picker--time .picker__box {
   font-size: 1em;
@@ -9502,10 +9234,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   }
 }
 
-/* ==========================================================================
-
-   $DEFAULT-TIME-PICKER
-
+/* ==========================================================================
+   $DEFAULT-TIME-PICKER
    ========================================================================== */
 .clockpicker-display {
   font-size: 4rem;

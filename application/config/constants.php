@@ -60,6 +60,7 @@ define('ADMIN_CTRL','admin');
 //Admin table constants
 define("CONTACT_ENQUIRY_TABLE", "contact_enquiry");
 define("USERS_TABLE", "users");
+define("DONATION_TABLE", "donation");
 /*
 |--------------------------------------------------------------------------
 | Exit Status Codes

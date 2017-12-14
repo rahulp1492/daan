@@ -71,8 +71,8 @@ class Master_model extends CI_Model
 					{ $this->db->limit($limit,$start);}
 
 				$rst=$this->db->get_where($tbl_name,$condition);
-		// echo $this->db->last_query();die;
-				return $rst->result_array();
+				
+				return $rst ? $rst->result_array() : array();
 			}
 
 			public function insertRecord($tbl_name,$data_array,$insert_id=FALSE)
