@@ -79,14 +79,13 @@ class Master_model extends CI_Model
 			{
 				if($this->db->insert($tbl_name,$data_array))
 				{
-					$this->db->last_query();
 					if($insert_id==true)
 						{return $this->db->insert_id();}
 					else
-						{return $this->db->insert_id();}
+						{return true;}
 				}
 				else
-					{return false;}
+				{return false;}
 			}
 
 	/*

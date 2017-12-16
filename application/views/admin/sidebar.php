@@ -13,6 +13,13 @@ $method = $this->router->fetch_method();
                     <span>Dashboard</span>
                 </a>
             </li>
+
+            <li <?php if($method=='banner'){ echo 'class="active"';}?>>
+                <a href="<?php echo base_url().ADMIN_CTRL;?>/dashboard/banner">
+                    <i class="fa fa-cog"></i>
+                    <span>Front Banner</span>
+                </a>
+            </li>
            
             <li <?php if($class=='user' || $class=='model' ||  $class=='color' && ($method =='add' || $method =='edit' || $method =='manage')){ echo 'class="active"';}?>>
                 <a href="#" class="dropdown-toggle">

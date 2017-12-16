@@ -27,7 +27,7 @@ class User extends CI_Controller
                     DONATION_TABLE . ".completed_uid" => $id,
                     DONATION_TABLE . ".status"        => 1,
                     DONATION_TABLE . ".active"        => '1',
-                    // DONATION_TABLE . ".complete" => '1',
+                    DONATION_TABLE . ".complete" => '1',
                 ),
                 'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
                 array('donation.created_at' => 'ASC'),
@@ -59,7 +59,7 @@ class User extends CI_Controller
                     DONATION_TABLE . ".activate" => '1',
                     DONATION_TABLE . ".active"   => '1',
                 ),
-                'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
+                'donation.slug,transaction.qty,donation_type.image,donation_type.image_thumb,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
                 array('donation.created_at' => 'ASC'),
                 false,
                 8);

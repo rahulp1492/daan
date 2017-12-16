@@ -62,7 +62,7 @@
                             <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i><?php echo $user_profile['phone'];?></p>
                             <p><i class="mdi-communication-email cyan-text text-darken-2"></i><?php echo $user_profile['email'];?></p>
                             <p><i class="mdi-social-cake cyan-text text-darken-2"></i><?php echo $user_profile['created_at'];?></p>
-                            <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i><?php echo $user_profile['address'].",".$user_profile['city'].",".$user_profile['state'].",".$user_profile['pincode'];?></p>
+                            <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i><?php echo $user_profile['address'].", nashik, maharashtra,".$user_profile['pincode'];?></p>
                           </div>
                         </div>
 
