@@ -18,23 +18,23 @@ class User extends CI_Controller
     {
         if (!empty($this->session->userdata('user_id')) && $this->session->userdata('user_id') != '') {
 
-            $id = $this->session->userdata('user_id');
-            $user_profile = $this->master_model->getRecords(USERS_TABLE, array('id' => $id), FALSE, FALSE, FALSE, 1);
-            $data['user_profile'] = !empty($user_profile[0])? $user_profile[0]:array();
+            $id                   = $this->session->userdata('user_id');
+            $user_profile         = $this->master_model->getRecords(USERS_TABLE, array('id' => $id), false, false, false, 1);
+            $data['user_profile'] = !empty($user_profile[0]) ? $user_profile[0] : array();
 // dd($data);
             $data['arr_donations'] = $this->index_model->getCards(DONATION_TABLE,
                 array(
                     DONATION_TABLE . ".completed_uid" => $id,
                     DONATION_TABLE . ".status"        => 1,
                     DONATION_TABLE . ".active"        => '1',
-                    DONATION_TABLE . ".complete" => '1',
+                    DONATION_TABLE . ".complete"      => '1',
                 ),
                 'donation.slug,transaction.qty,donation_type.image,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
                 array('donation.created_at' => 'ASC'),
                 false,
                 8);
 // dd($data);
-            $data['page_title'] = PROJECT_NAME . ' | My Donation Requests';
+            $data['page_title'] = PROJECT_NAME . ' | My Donation Profile';
             $data['page_name']  = 'Profile Edit';
             $data['content']    = 'front/user/timeline';
             $this->load->view('front/layout/template', $data);
@@ -52,6 +52,21 @@ class User extends CI_Controller
 
             $id = $this->session->userdata('user_id');
 
+            $perpage      = isset($_POST['per_page']) ? $_POST['per_page'] : 20;
+            $data['page'] = (isset($_GET['page'])) ? $perpage * (($_GET['page']) - 1) : 0;
+
+            $data['total'] = $this->master_model->getRecordCount(DONATION_TABLE,
+                array(
+                    DONATION_TABLE . ".uid"      => $id,
+                    DONATION_TABLE . ".status"   => 1,
+                    DONATION_TABLE . ".activate" => '1',
+                    DONATION_TABLE . ".active"   => '1',
+                ));
+            $pageNum  = $this->input->get('page');
+            $pageURL  = base_url('user/my_request');
+            $_pageRes = commonPagination($pageNum, $pageURL, $data['total'], 4, $perpage);
+
+            $data['pagination']   = $_pageRes['page_links'];
             $data['arr_requests'] = $this->index_model->getCards(DONATION_TABLE,
                 array(
                     DONATION_TABLE . ".uid"      => $id,
@@ -61,9 +76,9 @@ class User extends CI_Controller
                 ),
                 'donation.slug,transaction.qty,donation_type.image,donation_type.image_thumb,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
                 array('donation.created_at' => 'ASC'),
-                false,
-                8);
-// dd($data);
+                $_pageRes['offset'],
+                $_pageRes['per_page']);
+
             $data['page_title'] = PROJECT_NAME . ' | My Donation Requests';
             $data['page_name']  = 'My Donation Requests';
             $data['content']    = 'front/user/my_request';

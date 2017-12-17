@@ -167,52 +167,51 @@ if (!function_exists('dd')) {
 //     }
 // }
 
-// if (!function_exists('commonPagination')) {
+if (!function_exists('commonPagination')) {
 
-//     function commonPagination($segmnetUri, $baseUrl, $totalRec, $configuri, $numOfRec = '')
-//     {
-//         $CI = &get_instance();
+    function commonPagination($segmnetUri, $baseUrl, $totalRec, $configuri, $numOfRec = '')
+    {
+        $CI = &get_instance();
+        $resp                  = array();
+        $page_number           = $segmnetUri;
+        $page_url              = $config['base_url']              = $baseUrl;
+        $config['uri_segment'] = $configuri;
+        if (empty($numOfRec)) {$numOfRec = 25;}
+        $config['per_page']  = $resp['per_page']  = $numOfRec;
+        $config['num_links'] = 4;
+        if (empty($page_number)) {
+            $page_number = 1;
+        }
 
-//         $resp                  = array();
-//         $page_number           = $segmnetUri;
-//         $page_url              = $config['base_url']              = $baseUrl;
-//         $config['uri_segment'] = $configuri;
-//         if (empty($numOfRec)) {$numOfRec = 25;}
-//         $config['per_page']  = $resp['per_page']  = $numOfRec;
-//         $config['num_links'] = 4;
-//         if (empty($page_number)) {
-//             $page_number = 1;
-//         }
-
-//         $offset                         = ($page_number - 1) * $config['per_page'];
-//         $resp['offset']                 = $offset;
-//         $config['use_page_numbers']     = true;
-//         $config['page_query_string']    = true;
-//         $config['query_string_segment'] = 'page';
-//         $config['total_rows']           = $totalRec;
-//         $page_url                       = $page_url . '?page=' . $page_number;
-//         $config['full_tag_open']        = '<div class="pagination-block"><ul>';
-//         $config['full_tag_close']       = '</ul></div>';
-//         $config['prev_link']            = '<i class="fa fa-angle-left"></i>';
-//         $config['prev_tag_open']        = '<li>';
-//         $config['prev_tag_close']       = '</li>';
-//         $config['next_link']            = '<i class="fa fa-angle-right"></i>';
-//         $config['next_tag_open']        = '<li>';
-//         $config['next_tag_close']       = '</li>';
-//         $config['cur_tag_open']         = '<li><a class="pagi-acti" href="' . $page_url . '">';
-//         $config['cur_tag_close']        = '</a></li>';
-//         $config['num_tag_open']         = '<li>';
-//         $config['num_tag_close']        = '</li>';
-//         $config['first_tag_open']       = '<li>';
-//         $config['first_tag_close']      = '</li>';
-//         $config['last_tag_open']        = '<li>';
-//         $config['last_tag_close']       = '</li>';
-//         $config['first_link']           = '<i class="fa fa-angle-left"></i><i class="fa fa-angle-left"></i>';
-//         $config['last_link']            = '<i class="fa fa-angle-right"></i><i class="fa fa-angle-right"></i>';
-//         $CI->pagination->cur_page       = $offset;
-//         $CI->pagination->initialize($config);
-//         $config['page_links'] = $CI->pagination->create_links();
-//         $resp['page_links']   = $config['page_links'];
-//         return $resp;
-//     }
-// }
+        $offset                         = ($page_number - 1) * $config['per_page'];
+        $resp['offset']                 = $offset;
+        $config['use_page_numbers']     = true;
+        $config['page_query_string']    = true;
+        $config['query_string_segment'] = 'page';
+        $config['total_rows']           = $totalRec;
+        $page_url                       = $page_url . '/' . $page_number;
+        $config['full_tag_open']        = '<ul class="pagination">';
+        $config['full_tag_close']       = '</ul>';
+        $config['prev_link']            = '<i class="mdi-navigation-chevron-left"></i>';
+        $config['prev_tag_open']        = '<li>';
+        $config['prev_tag_close']       = '</li>';
+        $config['next_link']            = '<i class="mdi-navigation-chevron-right"></i>';
+        $config['next_tag_open']        = '<li>';
+        $config['next_tag_close']       = '</li>';
+        $config['cur_tag_open']         = '<li class="active"><a href="#">';
+        $config['cur_tag_close']        = '</a></li>';
+        $config['num_tag_open']         = '<li>';
+        $config['num_tag_close']        = '</li>';
+        $config['first_tag_open']       = '<li>';
+        $config['first_tag_close']      = '</li>';
+        $config['last_tag_open']        = '<li>';
+        $config['last_tag_close']       = '</li>';
+        // $config['first_link']           = '&lt;&lt;';
+        // $config['last_link']            = '&gt;&gt;';
+        $CI->pagination->cur_page = $offset;
+        $CI->pagination->initialize($config);
+        $config['page_links'] = $CI->pagination->create_links();
+        $resp['page_links']   = $config['page_links'];
+        return $resp;
+    }
+}

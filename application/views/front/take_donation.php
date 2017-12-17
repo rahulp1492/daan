@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col s12 m12 l12">
-          <h1 class="breadcrumbs-title">My Donation Requests</h1>
+          <h1 class="breadcrumbs-title">Take Donation</h1>
         </div>
       </div>
     </div>
@@ -55,7 +55,9 @@
    </div>
    <div class="text-center">
     <?php
-    echo $pagination;
+    if(sizeof($arr_requests)):
+      echo $pagination;
+    endif;
     ?>
   </div>
 </div>

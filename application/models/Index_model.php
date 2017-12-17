@@ -21,7 +21,7 @@ class Index_model extends CI_Model
         $this->db->join('users', 'users.id=' . $tbl_name . ".uid");
 
         $rst = $this->db->get_where($tbl_name, $condition);
-// dd($this->db->last_query());
+
         return $rst ? $rst->result_array() : array();
     }
 
@@ -36,7 +36,7 @@ class Index_model extends CI_Model
         if ($limit != "" || $start != "") {$this->db->limit($limit, $start);}
 
         $this->db->join('user_request', 'user_request.id=' . $tbl_name . ".request_id");
-        $this->db->join('users', 'users.id=user_request.uid');
+        $this->db->join('users', 'users.id = user_request.uid');
         $this->db->group_by('user_request.uid');
         $rst = $this->db->get_where($tbl_name, $condition);
 

@@ -3,11 +3,11 @@
 		<div class="col s6 m8 l8">
 			<div class="section no-pad-bot">
 				<div class="container">
-					<h1 class="header center">We can Help Someone</h1>
+<!-- 					<h1 class="header center">We can Help Someone</h1>
 					<div class="row center">
 						<h5 class="header col s12 light">The value of a man resides in what he gives and not in what he is capable of receiving.</h5>
 					</div><br><br>
-			</div>
+ -->			</div>
 		</div>
 	</div>
 	<div class="col s6 m4 l4">
@@ -293,7 +293,7 @@
 				</div>
 			<?php endforeach;?>
 			<div class="col s12">
-				<a href="#" class="btn right blue darken-2">Load More <i class="fa fa-chevron-right" aria-hidden="true"></i> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				<a href="<?=base_url('make_donation')?>" class="btn right blue darken-2">Load More <i class="fa fa-chevron-right" aria-hidden="true"></i> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				<br/><br/>
 			</div>
 		</div>
@@ -315,7 +315,7 @@
 				<a style="width:100%" href="#1" class="btn blue darken-2 btn-wave btn-large">Do Donation</a>
 			</div>
 			<div class="col s6 l3">
-				<a style="width:100%" href="#1" class="btn blue darken-2 btn-wave btn-large">Reqst Donation </a>
+				<a style="width:100%" href="#1" class="btn blue darken-2 btn-wave btn-large">Request Donation </a>
 			</div>
 		</div>
 	</div>
@@ -329,7 +329,7 @@
 			<div class="row">
 				<div class="col s12 m12 l12">
 					<h1 class="breadcrumbs-title">Take Donation</h1>
-					<p style="margin-top: -2px;">List of real life heores , angles for all </p>
+					<p style="margin-top: -2px;">List Of Real Life Heros , Angles For All </p>
 				</div>
 			</div>
 		</div>
@@ -374,86 +374,38 @@
 
 			<?php endforeach;?>
 			<div class="col s12">
-				<a href="#" class="btn right blue darken-2">Load More <i class="fa fa-chevron-right" aria-hidden="true"></i> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+				<a href="<?=base_url('take_donation')?>" class="btn right blue darken-2">Load More <i class="fa fa-chevron-right" aria-hidden="true"></i> <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				<br/><br/>
 			</div>
 		</div>
 	</div>
 </section>
-
+<?php if (sizeof($angles_donar)): ?>
 <section class="grey darken-4 white-text">
 	<div class="container">
 		<div class="row">
 			<div class="col s12 m12 l12">
 				<h1 class="breadcrumbs-title">Angles</h1>
-				<p style="margin-top: -2px;">List of real life heores , angles for all </p>
+				<p style="margin-top: -2px;">List Of Real Life Heros , Angles For All </p>
 			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
-<?php //print_r($angles_donar);
-foreach ($angles_donar as $key => $value):
+	<?php
+	foreach ($angles_donar as $key => $value):
 	?>
 	<div class="col s6 m4 l2">
-		<div class="card">
-			<a href="#">
-				<div class="card-image waves-effect waves-block waves-light">
-					<img class="circle responsive-img"src="<?=base_url() . $value['pro_img']?>" alt="<?=$value['first_name'] . " " . $value['last_name'];?>">
-					<span class="card-title"><?=$value['first_name'] . " " . $value['last_name'];?></span>
-				</div>
-			</a>
-		</div>
-	</div>
-	<div class="col s6 m4 l2">
+		<a href="<?=base_url('timeline/'.base64_encode($value['uid']))?>">
 		<div class="card">
 			<div class="card-image  waves-light">
-				<img class="circle responsive-img"  src="https://images-na.ssl-images-amazon.com/images/G/01/gcx/gf/age-group-man-circle._CB278609306_.png" alt="<?=$value['first_name'] . " " . $value['last_name'];?>">
+				<img class="circle responsive-img"  src="<?=base_url() . $value['pro_img']?>" alt="*">
 			</div>
 			<div class="card-content">
-				<span class="card-title activator white-text text-darken-4"><?=$value['first_name'] . " " . $value['last_name'];?></span>
+				<span class="card-title white-text text-darken-4"><?=$value['first_name'] . " " . $value['last_name'];?></span>
 			</div>
 		</div>
-	</div>
-	<div class="col s6 m4 l2">
-		<div class="card">
-			<div class="card-image  waves-light">
-				<img class="circle responsive-img"  src="https://images-na.ssl-images-amazon.com/images/G/01/gcx/gf/age-group-man-circle._CB278609306_.png" alt="<?=$value['first_name'] . " " . $value['last_name'];?>">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator white-text text-darken-4"><?=$value['first_name'] . " " . $value['last_name'];?></span>
-			</div>
-		</div>
-	</div>
-	<div class="col s6 m4 l2">
-		<div class="card">
-			<div class="card-image  waves-light">
-				<img class="circle responsive-img"  src="https://images-na.ssl-images-amazon.com/images/G/01/gcx/gf/age-group-man-circle._CB278609306_.png" alt="<?=$value['first_name'] . " " . $value['last_name'];?>">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator white-text text-darken-4"><?=$value['first_name'] . " " . $value['last_name'];?></span>
-			</div>
-		</div>
-	</div>
-	<div class="col s6 m4 l2">
-		<div class="card">
-			<div class="card-image  waves-light">
-				<img class="circle responsive-img"  src="https://images-na.ssl-images-amazon.com/images/G/01/gcx/gf/age-group-man-circle._CB278609306_.png" alt="<?=$value['first_name'] . " " . $value['last_name'];?>">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator white-text text-darken-4"><?=$value['first_name'] . " " . $value['last_name'];?></span>
-			</div>
-		</div>
-	</div>
-	<div class="col s6 m4 l2">
-		<div class="card">
-			<div class="card-image  waves-light">
-				<img class="circle responsive-img"  src="https://images-na.ssl-images-amazon.com/images/G/01/gcx/gf/age-group-man-circle._CB278609306_.png" alt="<?=$value['first_name'] . " " . $value['last_name'];?>">
-			</div>
-			<div class="card-content">
-				<span class="card-title activator white-text text-darken-4"><?=$value['first_name'] . " " . $value['last_name'];?></span>
-			</div>
-		</div>
+		</a>
 	</div>
 <?php endforeach;?>
 </div>
@@ -461,3 +413,4 @@ foreach ($angles_donar as $key => $value):
 <br/>
 <br/>
 </section>
+<?php endif; ?>

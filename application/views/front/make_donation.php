@@ -3,14 +3,14 @@
     <div class="container">
       <div class="row">
         <div class="col s12 m12 l12">
-          <h1 class="breadcrumbs-title">My Donation Requests</h1>
+          <h1 class="breadcrumbs-title">Make Donation</h1>
         </div>
       </div>
     </div>
     <div class="row">
       <?php
-      if(sizeof($arr_requests)):
-        foreach ($arr_requests as $key => $value):
+      if(sizeof($arr_donation)):
+        foreach ($arr_donation as $key => $value):
           ?>
           <div class="col s12 m4 l3">
             <div class="card hoverable" style="height:325px;">
@@ -55,7 +55,9 @@
    </div>
    <div class="text-center">
     <?php
-    echo $pagination;
+    if(sizeof($arr_donation)):
+      echo $pagination;
+    endif;
     ?>
   </div>
 </div>

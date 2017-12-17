@@ -11,6 +11,9 @@ $route['activation/(:any)/(:any)'] = 'authentication/activate/$1/$2';
 $route['login/(:any)']             = 'authentication/session/$1';
 $route['do_request']               = 'index/do_request';
 $route['do_donation']              = 'index/do_donation';
+$route['take_donation']            = 'index/take_donation';
+$route['make_donation']            = 'index/make_donation';
+$route['timeline/(:any)']          = 'index/timeline/$1';
 $route['donation/(:any)']          = 'index/donate_description/$1';
 
 /**
@@ -22,6 +25,6 @@ $route[USER . '/change_password'] = USER . 'change_password';
 /**
  * Admin Routes
  **/
-$route[ADMIN_CTRL]                   = ADMIN_CTRL . '/login';
-$route[ADMIN_CTRL . '/logout']       = ADMIN_CTRL . '/login/logout';
+$route[ADMIN_CTRL]                    = ADMIN_CTRL . '/login';
+$route[ADMIN_CTRL . '/logout']        = ADMIN_CTRL . '/login/logout';
 $route[ADMIN_CTRL . '/banner_upload'] = ADMIN_CTRL . '/dashboard/banner';
