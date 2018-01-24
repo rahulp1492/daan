@@ -172,11 +172,12 @@ class Authentication extends CI_Controller
                     'phone'      => $this->input->post('phone'),
                 );
             }
+
             if ($this->form_validation->run() == true && $this->ion_auth->register($identity, $password, $email, $additional_data)) {
                 // check to see if we are creating the user
                 // redirect them back to the admin page
                 $this->session->set_flashdata('success', $this->ion_auth->messages());
-                redirect("register", 'refresh');
+                redirect(base_url() . 'register');
             } else {
                 // the user is not logging in so display the login page
                 // set the flash data error message if there is one
@@ -188,7 +189,7 @@ class Authentication extends CI_Controller
     }
 
     public function register($value = '')
-    {
+    {   
         $data              = $this->session->flashdata('data');
         $data['page_name'] = "Register";
         $data['content']   = 'front/register';

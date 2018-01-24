@@ -312,6 +312,7 @@ class Ion_auth
 				$this->ion_auth_model->trigger_events(array('post_account_creation', 'post_account_creation_unsuccessful'));
 				return FALSE;
 			}
+
 		}
 		else
 		{

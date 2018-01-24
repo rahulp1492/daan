@@ -111,7 +111,6 @@ class Master_model extends CI_Model
 					{return false;}
 			}
 
-
 	/*
 		# function deleteRecord($tbl_name,$pri_col,$id)
 		# * indicates paramenter is must

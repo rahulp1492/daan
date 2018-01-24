@@ -157,7 +157,7 @@ class Index extends CI_Controller
         if (file_exists('./uploads/admin/banner/'.$data['banner']['banner_image'])) {
         	$data['banner']['banner_image'] = base_url().'uploads/admin/banner/'.$data['banner']['banner_image'];
         }else{
-        	$data['banner']['banner_image'] = base_url().'assets/img/slider.jpg';        	
+        	$data['banner']['banner_image'] = base_url().'assets/img/slider.jpg';
         }
 
         $data['do_donation'] = $this->index_model->getCards('donation', array('status' => 1), 'donation.slug,transaction.qty,donation_type.image,donation_type.image_thumb,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
@@ -170,7 +170,7 @@ class Index extends CI_Controller
         $data['reqst_donation'] = $this->index_model->getCards('donation', array('status' => 0), 'donation.slug,transaction.qty,donation_type.image,donation_type.image_thumb,users.pro_img,users.first_name,users.last_name,donation.qty as goal_qty,donation.name as donation_title,donation_type.name as donation_name,donation.id as donation_id',
             array('donation.created_at' => 'ASC'),
             false,
-            4);
+            8);
 
         $data['angles_donar'] = $this->index_model->getDonars('transaction', false, 'users.first_name,users.last_name,users.pro_img,user_request.uid,count(user_request.uid) as usr_cnt', array('usr_cnt' => 'DSC'), false, 8);
         //Quantity wise sorting not done.
